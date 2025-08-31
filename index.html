@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Exámenes de Certificación API 570</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Vista principal (portada) -->
+        <div id="home-view">
+            <header>
+                <h1>Simulador de Exámenes de Certificación API 570</h1>
+                <p>Preparación integral para la certificación de Inspector de Tuberías</p>
+            </header>
+            
+            <main>
+                <!-- Sección de Guía de Estudio -->
+                <section id="study-guide" class="section">
+                    <h2>Guía de Estudio - Cuerpo de Conocimiento</h2>
+                    <p>Practica con exámenes individuales de cada código del cuerpo de conocimiento para la certificación API 570:</p>
+                    
+                    <div class="exam-selection">
+                        
+                        <div class="exam-card" onclick="selectExam('api570_closed')">
+                            <h3>API 570 - Libro Cerrado</h3>
+                            <p>Inspección, Reparación, Alteración y Reclasificación de Tuberías - Examen sin consulta</p>
+                            <div class="questions-count">181 preguntas</div>
+                        </div>
+                        <div class="exam-card" onclick="selectExam('api570_open')">
+                            <h3>API 570 - Libro Abierto</h3>
+                            <p>Inspección, Reparación, Alteración y Reclasificación de Tuberías - Examen con consulta</p>
+                            <div class="questions-count">24 preguntas</div>
+                        </div>
+                        
+
+                        <div class="exam-card" onclick="selectExam('asmeB31_3_closed')">
+                            <h3>ASME B31.3 - Libro Cerrado</h3>
+                            <p>Tuberías de Proceso - Examen sin consulta</p>
+                            <div class="questions-count">62 preguntas</div>
+                        </div>
+                        <div class="exam-card" onclick="selectExam('asmeB31_3_open')">
+                            <h3>ASME B31.3 - Libro Abierto</h3>
+                            <p>Tuberías de Proceso - Examen con consulta</p>
+                            <div class="questions-count">68 preguntas</div>
+                        </div>
+                        
+                
+                        <div class="exam-card" onclick="selectExam('asmeSecV_closed')">
+                            <h3>ASME BPVC Sección V</h3>
+                            <p>Ensayos No Destructivos</p>
+                            <div class="questions-count">110 preguntas</div>
+                        </div>
+                       
+                      
+                        <div class="exam-card" onclick="selectExam('asmeSecIX_closed')">
+                            <h3>ASME BPVC Sección IX</h3>
+                            <p>Calificación de Soldadura y Brazing</p>
+                            <div class="questions-count">100 preguntas</div>
+                        </div>
+
+                        <div class="exam-card" onclick="selectExam('api574_closed')">
+                            <h3>API 574 - Libro Cerrado</h3>
+                            <p>Inspección de Tuberías</p>
+                            <div class="questions-count">95 preguntas</div>
+                        </div>
+                        <div class="exam-card" onclick="selectExam('api574_open')">
+                            <h3>API 574 - Libro Abierto</h3>
+                            <p>Inspección de Tuberías</p>
+                            <div class="questions-count">17 preguntas</div>
+                        </div>
+
+                        <div class="exam-card" onclick="selectExam('api578_closed')">
+                            <h3>API 578</h3>
+                            <p>Verificación de Materiales de Aleación</p>
+                            <div class="questions-count">26 preguntas</div>
+                        </div>
+                       
+                    
+                        
+            
+                        <div class="exam-card" onclick="selectExam('api577_closed')">
+                            <h3>API 577</h3>
+                            <p>Soldadura, Inspección y Metalurgia</p>
+                            <div class="questions-count">60 preguntas</div>
+                        </div>
+                      
+                        
+                        
+                        
+                       
+                        <div class="exam-card" onclick="selectExam('asmeB16_5_closed')">
+                            <h3>ASME B16.5 - Libro Cerrado</h3>
+                            <p>Bridas de Tubería y Accesorios Bridados - Examen sin consulta</p>
+                            <div class="questions-count">15 preguntas</div>
+                        </div>
+                        <div class="exam-card" onclick="selectExam('asmeB16_5_open')">
+                            <h3>ASME B16.5 - Libro Abierto</h3>
+                            <p>Bridas de Tubería y Accesorios Bridados - Examen con consulta</p>
+                            <div class="questions-count">17 preguntas</div>
+                        </div>
+                        
+                        
+                    </div>
+                </section>
+                
+                <!-- Sección de Examen Final -->
+                <section id="final-exam" class="section">
+                    <h2>Examen Final de Certificación API 570</h2>
+                    <p>Realiza el examen completo simulando las condiciones reales de la certificación:</p>
+                    
+                    <div class="final-exam-options">
+                       
+                    <div class="final-exam-card" onclick="selectExam('api570_final_closed_book')">
+                        <div class="exam-icon">📚</div>
+                        <h3>Examen Final API 570 - Libro Cerrado</h3>
+                        <p>Parte 1 del examen final sin consulta</p>
+                        <div class="exam-details">
+                            <span class="detail-item">⏱️ 2.75 horas</span>
+                            <span class="detail-item">📝 100 preguntas</span>
+                        </div>
+                        <button class="btn">Comenzar</button>
+                    </div>
+                    <div class="final-exam-card" onclick="selectExam('api570_final_open_book')">
+                        <div class="exam-icon">📖</div>
+                        <h3>Examen Final API 570 - Libro Abierto</h3>
+                        <p>Parte 2 del examen final con consulta permitida</p>
+                        <div class="exam-details">
+                            <span class="detail-item">⏱️ 3.75 horas</span>
+                            <span class="detail-item">📝 50 preguntas</span>
+                        </div>
+                        <button class="btn">Comenzar</button>
+                    </div>
+                    
+                    
+                    </div>
+                </section>
+            </main>
+            
+            <footer>
+                <p>&copy; 2025 Simulador de Exámenes de Certificación API 570. Todos los derechos reservados.</p>
+                <p>Desarrollado por Alejandro Plaza</p>
+            </footer>
+        </div>
+        
+        <!-- Vista de ingreso de nombre -->
+        <div id="name-view" class="hidden">
+            <h2>Ingresa tu nombre</h2>
+            <div class="name-form">
+                <input type="text" id="user-name" placeholder="Tu nombre completo" />
+                <button class="btn" onclick="startExam()">Comenzar Examen</button>
+                <button class="btn btn-back" onclick="backToHome()">Volver al Inicio</button>
+            </div>
+        </div>
+        
+        <!-- Vista del examen -->
+        <div id="exam-view" class="hidden">
+            <div class="exam-header">
+                <div class="exam-title" id="exam-title">Examen</div>
+                <div class="exam-info">
+                    <div class="user-name" id="display-name">Usuario</div>
+                    <div class="timer" id="timer">00:00</div>
+                </div>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <div class="progress-text" id="progress-text">Pregunta 1 de 100</div>
+            
+            <div class="exam-navigation">
+                <button class="btn-nav" onclick="openQuestionIndex()">
+                    📋 Índice de Preguntas
+                </button>
+                <button class="btn-nav" onclick="toggleMarkForReview()" id="mark-btn">
+                    ⭐ Marcar para Revisar
+                </button>
+            </div>
+            
+            <!-- Panel de referencias para libro abierto -->
+            <div id="references-panel" class="hidden">
+                <div class="references-header">
+                    <h3>Referencias y Documentos</h3>
+                </div>
+                <div class="references-content">
+                    <div class="references-section">
+                        <h4>Normas de Referencia</h4>
+                        <ul id="standards-list">
+                            <!-- Se llenará dinámicamente -->
+                        </ul>
+                    </div>
+                    <div id="attachments-section" class="references-section hidden">
+                        <h4>Documentos Adjuntos</h4>
+                        <ul id="attachments-list">
+                            <!-- Se llenará dinámicamente para preguntas 41-50 -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="question-container">
+                <div class="question" id="question-text">Cargando pregunta...</div>
+                <div class="options" id="options-container">
+                    <!-- Las opciones se generarán dinámicamente -->
+                </div>
+            </div>
+            
+            <div style="margin-top: 30px; display: flex; justify-content: space-between;">
+                <button class="btn" id="prev-btn" onclick="prevQuestion()" disabled>Anterior</button>
+                <div>
+                    <button class="btn" id="next-btn" onclick="nextQuestion()" disabled>Siguiente</button>
+                </div>
+            </div>
+            
+            <div style="margin-top: 15px;">
+                <button class="btn btn-back" onclick="confirmExit()">Salir del Examen</button>
+            </div>
+        </div>
+        
+        <!-- Vista del índice de preguntas -->
+        <div id="index-view" class="hidden">
+            <div class="index-header">
+                <h2>Índice de Preguntas</h2>
+                <div class="index-legend">
+                    <div class="legend-item">
+                        <span class="legend-color unanswered"></span>
+                        <span>Sin responder</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color answered"></span>
+                        <span>Respondida</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color marked"></span>
+                        <span>Marcada para revisar</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="index-container" id="index-container">
+                <!-- Las preguntas se generarán dinámicamente -->
+            </div>
+            
+            <div class="index-actions">
+                <button class="btn" onclick="closeQuestionIndex()">Volver al Examen</button>
+                <button class="btn btn-back" onclick="goToUnanswered()">Ir a No Respondidas</button>
+                <button class="btn btn-back" onclick="goToMarked()">Ir a Marcadas</button>
+            </div>
+        </div>
+        
+        <!-- Vista de resultados -->
+        <div id="result-view" class="hidden">
+            <h2>Resultados del Examen</h2>
+            <div class="result-container">
+                <div class="result-score" id="result-score">0%</div>
+                <div class="result-message" id="result-message">¡Buen trabajo!</div>
+                
+                <div class="result-details">
+                    <div class="result-item">
+                        <div class="result-value" id="correct-answers">0</div>
+                        <div class="result-label">Respuestas Correctas</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-value" id="incorrect-answers">0</div>
+                        <div class="result-label">Respuestas Incorrectas</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-value" id="time-spent">00:00</div>
+                        <div class="result-label">Tiempo Utilizado</div>
+                    </div>
+                </div>
+                
+                <button class="btn" onclick="reviewAnswers()">Revisar Respuestas</button>
+                <button class="btn" onclick="restartExam()">Reiniciar Examen</button>
+                <button class="btn btn-back" onclick="backToHome()">Volver al Inicio</button>
+            </div>
+        </div>
+        
+        <!-- Vista de revisión de respuestas -->
+        <div id="review-view" class="hidden">
+            <h2>Revisión de Respuestas</h2>
+            <div class="review-container" id="review-container">
+                <!-- Las preguntas y respuestas se generarán dinámicamente -->
+            </div>
+            
+            <div style="margin-top: 30px;">
+                <button class="btn btn-back" onclick="backToResults()">Volver a Resultados</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
