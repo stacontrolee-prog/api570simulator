@@ -489,7 +489,33 @@ function finishExam() {
     document.getElementById('correct-answers').textContent = correctCount;
     document.getElementById('incorrect-answers').textContent = incorrectCount;
     document.getElementById('time-spent').textContent = document.getElementById('timer').textContent;
+
+    // -------------------------
+    // 🔥 ENVIAR RESULTADOS A MAKE
+    // -------------------------
+    const userName = document.getElementById('user-name').value || "Usuario Anónimo";
+    const examTitle = document.getElementById('exam-title').textContent;
+    const timeSpent = document.getElementById('timer').textContent;
+
+    fetch("https://hook.us2.make.com/fnjythpos6vu6rbknjekdrv6och7o2fk", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: userName,
+            titulo_examen: examTitle,
+            duracion: timeSpent,
+            respuestas_correctas: correctCount,
+            respuestas_incorrectas: incorrectCount,
+            porcentaje_acierto: percentage,
+            mensaje: message
+        })
+    })
+    .then(res => console.log("✅ Datos enviados al webhook de Make"))
+    .catch(err => console.error("❌ Error enviando datos:", err));
 }
+
 
 // Función para reiniciar el examen
 function restartExam() {
