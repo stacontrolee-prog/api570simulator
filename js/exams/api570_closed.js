@@ -1150,7 +1150,7 @@ export default {
                 "0.00375\"/year",
                 "0.0025\"/year"
             ],
-            correct: 1,
+            correct: 0,
             reference: "API 570, 7.1.1"
         },
         {
@@ -2105,12 +2105,12 @@ export default {
             id: 176,
             text: "Secondary process piping is small-bore (less than or equal to ______ inches for a line ______ inches for larger lines.) process piping downstream of normally closed block valves.",
             options: [
-                "NPS 3/4, NPS 1",
-                "NPS 1, NPS 2",
-                "NPS 2, NPS 3",
-                "NPS 3, NPS 4"
+                "NPS 3/4",
+                "NPS 1",
+                "NPS 2",
+                "NPS 3"
             ],
-            correct: 1,
+            correct: 2,
             reference: "API 570, 3.40"
         },
         {
