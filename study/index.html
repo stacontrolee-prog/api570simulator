@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Estudio API 570</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar con índice interactivo -->
+        <aside class="sidebar">
+            <h2>Study API 570</h2>
+            <nav>
+                <ul id="chapter-list">
+                    <!-- Los capítulos se cargarán dinámicamente aquí -->
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main class="content">
+            <div class="language-selector">
+                <button id="btn-en" class="active">English</button>
+                <button id="btn-es">Español</button>
+            </div>
+            
+            <div id="chapter-content">
+                <h1>Guía de Estudio API 570</h1>
+                <p>Selecciona un capítulo del índice para comenzar a estudiar.</p>
+                <p>Esta guía incluirá:</p>
+                <ul>
+                    <li>Contenido original en inglés</li>
+                    <li>Traducción al español</li>
+                    <li>9 capítulos completos</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <!-- Cargar primero el gestor de capítulos -->
+    <script src="js/chapters-manager.js"></script>
+    
+    <!-- Cargar los datos de cada capítulo -->
+    <script src="js/chapters/chapter_01-data.js"></script>
+    <script src="js/chapters/chapter_02-data.js"></script>
+    <script src="js/chapters/chapter_03-data.js"></script>
+    <script src="js/chapters/chapter_04-data.js"></script>
+    <script src="js/chapters/chapter_05-data.js"></script>
+    <script src="js/chapters/chapter_06-data.js"></script>
+    <script src="js/chapters/chapter_07-data.js"></script>
+    <script src="js/chapters/chapter_08-data.js"></script>
+    <script src="js/chapters/chapter_09-data.js"></script>
+    <script src="js/chapters/annex-A.js"></script>
+    <script src="js/chapters/annex-B.js"></script>
+    
+    <!-- Finalmente cargar la lógica de la aplicación -->
+    <script src="js/app.js"></script>
+</body>
+</html>
