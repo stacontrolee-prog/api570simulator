@@ -2,15 +2,37 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía de Estudio API 570</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Description" content="API 570 Piping Inspector Certification">
+    <meta name="Author" content="Alejandro Plaza">
+    <title>API 570 Piping Inspector Certification (2025)</title>
+    <link rel="stylesheet" href="css/styles.css?v=1.2.12">
+    <!-- Agregar iconos de Font Awesome para el botón de menú -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
 </head>
 <body>
     <div class="container">
         <!-- Sidebar con índice interactivo -->
-        <aside class="sidebar">
-            <h2>Study API 570</h2>
+        <aside class="sidebar" id="sidebar">
+            <h2>API 570 Piping Inspector Certification (2025)</h2>
+            
+            <!-- Selector de códigos -->
+            <div class="code-selector">
+                <select id="code-select">
+                    <option value="select">-- Select Code --</option>
+                    <option value="API570">API 570</option>
+                    <option value="API571">API 571</option>
+                    <option value="API574">API 574</option>
+                    <option value="API576">API 576</option>
+                    <option value="API577">API 577</option>
+                    <option value="API578">API 578</option>
+                    <!-- Aquí puedes agregar más códigos -->
+                </select>
+            </div>
+            
             <nav>
                 <ul id="chapter-list">
                     <!-- Los capítulos se cargarán dinámicamente aquí -->
@@ -20,41 +42,207 @@
 
         <!-- Contenido principal -->
         <main class="content">
+            <!-- Botón para alternar el sidebar en móviles -->
+            <button class="toggle-sidebar" id="toggle-sidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+            
             <div class="language-selector">
                 <button id="btn-en" class="active">English</button>
                 <button id="btn-es">Español</button>
             </div>
             
+            <!-- Contenedor para el contenido de los capítulos -->
             <div id="chapter-content">
-                <h1>Guía de Estudio API 570</h1>
-                <p>Selecciona un capítulo del índice para comenzar a estudiar.</p>
-                <p>Esta guía incluirá:</p>
-                <ul>
-                    <li>Contenido original en inglés</li>
-                    <li>Traducción al español</li>
-                    <li>9 capítulos completos</li>
+            <h1>API 570 Piping Inspector Certification (2025)</h1>
+            
+            <img class="img-float-left" alt="ANSI Certified" height="213" width="250" src="image/ANAB-Symbol-RGB-17024-Personnel-Certification-Body.png" />
+            
+            <p><em>This exam is scheduled to be administered <a href="https://www.api.org/products-and-services/individual-certification-programs/schedule-exams">in-person</a> at designated test centers only.</em></p>
+            
+            <p>Certified API 570 Piping inspectors must have a broad knowledge base relating to maintenance, inspection, alteration and repair of in-service metallic piping systems. The API 570 examination is designed to determine if applicants have such knowledge.</p>
+            
+            <p>This certification program benefits employers and the industry as a whole by helping to:</p>
+           
+            <ul class="main-list">
+                <li>Provide a continued high level of safety through the use of inspectors specialized in process piping</li>
+                <li>Improve management control of process unit inspection, repair, alteration and rerating</li>
+                <li>Reduce the potential for inspection delays resulting from regulatory requirements</li>
+            </ul>
+           
+            <p>API 570 certification is valid for a three-year term and is accredited by the American National Standards Institute (ANSI). This accreditation ensures that the exam has been developed to the highest standard for openness and integrity and meets the rigorous requirements established under the International Organization for Standardization (ISO) 17024.</p>
+            
+            <hr />
+            
+            <div class="subsection">
+                <h2>1. Studying for the Exam</h2>
+                <ul class="main-list">
+                    <li>
+                        <span class="list-title">Publications Effectivity Sheet</span> - Questions on the API 570 exam are derived from the publications listed in this document. Only the specific sections of publications that are listed on the Effectivity Sheet will be available to you during the open-book portion of the exam.
+                        <ul class="sub-list">
+                            <li><strong><a href="pdf/570_EKS_Feburary 2025_final.pdf" class="link-pdf" target="_blank" rel="noopener noreferrer">API 570 Publications Effectivity Sheet</a></strong> <em>for 2025 exams</em></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="list-title">Body of Knowledge</span> - List of specific topics included in the API 570 exam
+                        <ul class="sub-list">
+                            <li><strong><a href="pdf/BOK_570_Feburary 2025_final.pdf" class="link-pdf" target="_blank" rel="noopener noreferrer">API 570 Body of Knowledge</a></strong> <em>for 2025 exams</em></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
+            
+            <hr />
+            
+            <div class="subsection">
+                <h2>2. Exam Structure</h2>
+                <ul class="main-list">
+                    <li>The API 570 exam day is 7.5 hours long - a short tutorial session, 2.75 hours for the closed-book portion, a 45-minute lunch break and 3.75 hours for the open-book portion.</li>
+                    <li>There are 170 questions on the API 570 exam, of which only 140 are scored. The remaining 30 are pretest questions.
+                        <ul class="sub-list">
+                            <li><a href="pdf/ICP-POL-205_Pretest Questions on API Exams.pdf" class="link-pdf" target="_blank" rel="noopener noreferrer">Pretest Questions FAQs</a></li>
+                        </ul>
+                    </li>
+                    <li>There are 110 closed-book questions and 60 open-book questions.</li>
+                    <li>View the <a href="pdf/Examinations/ICP-PD-201a_ICP Tutorial 510_570_653.pdf" class="link-pdf" target="_blank" rel="noopener noreferrer">Exam Tutorial</a> before exam day to familiarize yourself with the format.</li>
+                </ul>
+            </div>
+            
+            <hr />
+            
+            <div class="subsection">
+                <h2>3. What Can You Bring Into the Exam</h2>
+                <ul class="main-list">
+                    <li>Papers, notes and books are <em>not allowed</em> in Prometric computer testing centers.</li>
+                    <li>PDF documents of pertinent codes and standards will be available on your computer during the open book portion of the exam and will be presented in English.</li>
+                    <li><a href="https://www.api.org/products-and-services/individual-certification-programs/schedule-exams">Learn More about Exam Day</a></li>
+                </ul>
+            </div>
+            
+            <hr />
+            
+            <div class="subsection">
+                <h2>4. Additional Resources</h2>
+                <ul class="main-list">
+                    <li>Examination Policies & Notifications: <a href="/products-and-services/individual-certification-programs/policies">Policies</a></li>
+                    <li>Purchasing Authorized API Publications: <a href="/products-and-services/standards/purchase">API Publications Store</a></li>
+                    <li><a href="https://anabpd.ansi.org/Accreditation/credentialing/personnel-certification/AllDirectoryDetails?&prgID=201&OrgId=72359&statusID=4" class="external-link">ANSI Accreditation</a></li>
+                </ul>
+            </div>
+        </div>
+            <!-- Contenedor para el examen (inicialmente oculto) -->
+            <div id="exam-container"></div>
         </main>
     </div>
 
-    <!-- Cargar primero el gestor de capítulos -->
-    <script src="js/chapters-manager.js"></script>
+    <!-- Footer -->
+    <footer class="footer">
+        
+        
+        <div class="footer-bottom">
+            <p>&copy; API 570 Piping Inspector Certification (2025) Coded by | Alejandro Plaza. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cargar primero el gestor de códigos -->
+    <script src="js/codes-manager.js?v=1.2.12"></script>
     
-    <!-- Cargar los datos de cada capítulo -->
-    <script src="js/chapters/chapter_01-data.js"></script>
-    <script src="js/chapters/chapter_02-data.js"></script>
-    <script src="js/chapters/chapter_03-data.js"></script>
-    <script src="js/chapters/chapter_04-data.js"></script>
-    <script src="js/chapters/chapter_05-data.js"></script>
-    <script src="js/chapters/chapter_06-data.js"></script>
-    <script src="js/chapters/chapter_07-data.js"></script>
-    <script src="js/chapters/chapter_08-data.js"></script>
-    <script src="js/chapters/chapter_09-data.js"></script>
-    <script src="js/chapters/annex-A.js"></script>
-    <script src="js/chapters/annex-B.js"></script>
+    <!-- Cargar los datos de cada código -->
+    <script src="js/codes/API570-data.js?v=1.2.12"></script>
+    <script src="js/codes/API574-data.js?v=1.2.12"></script>
+    <script src="js/codes/API576-data.js?v=1.2.12"></script>
+    <script src="js/codes/API577-data.js?v=1.2.12"></script>
+    <script src="js/codes/API578-data.js?v=1.2.12"></script>
+    
+    <!-- Cargar los capítulos de cada código -->
+    <!-- Para API 570 -->
+    <script src="js/codes/API570/chapters/chapter_01-data.js?v=1.2.12"></script>
+    <script src="js/codes/API570/chapters/chapter_02-data.js?v=1.2.12"></script>
+    <script src="js/codes/API570/chapters/chapter_03-data.js?v=1.2.12"></script>
+    <script src="js/codes/API570/chapters/chapter_04-data.js?v=1.2.12"></script>
+    <script src="js/codes/API570/chapters/chapter_05-data.js?v=1.2.12"></script>
+    <script src="js/codes/API570/chapters/chapter_06-data.js?v=1.2.12"></script>
+    <script src="js/codes/API570/chapters/chapter_07-data.js?v=1.2.12"></script>
+    <script src="js/codes/API570/chapters/chapter_08-data.js?v=1.2.12"></script>
+    <script src="js/codes/API570/chapters/chapter_09-data.js?v=1.2.12"></script>
+    <script src="js/codes/API570/chapters/annex-A.js?v=1.2.12"></script>
+    <script src="js/codes/API570/chapters/annex-B.js?v=1.2.12"></script>
+    <!-- ... más capítulos de API 570 -->
+
+    <!-- Para API 571 -->
+    <script src="js/codes/API571/chapters/chapter_02-data.js?v=1.2.12"></script>
+    <script src="js/codes/API571/chapters/chapter_3-3-data.js?v=1.2.12"></script>
+    <script src="js/codes/API571/chapters/chapter_3-8-data.js?v=1.2.12"></script>
+    <script src="js/codes/API571/chapters/chapter_3-9-data.js?v=1.2.12"></script>
+    <script src="js/codes/API571/chapters/chapter_3-14-data.js?v=1.2.12"></script>
+    <script src="js/codes/API571/chapters/chapter_3-15-data.js?v=1.2.12"></script>
+    <script src="js/codes/API571/chapters/chapter_3-17-data.js?v=1.2.12"></script>
+    <script src="js/codes/API571/chapters/chapter_3-22-data.js?v=1.2.12"></script>
+    <script src="js/codes/API571/chapters/chapter_3-27-data.js?v=1.2.12"></script>
+    <script src="js/codes/API571/chapters/chapter_3-31-data.js?v=1.2.12"></script>
+    <script src="js/codes/API571/chapters/chapter_3-37-data.js?v=1.2.12"></script>
+    <script src="js/codes/API571/chapters/chapter_3-43-data.js?v=1.2.12"></script>
+    <script src="js/codes/API571/chapters/chapter_3-45-data.js?v=1.2.12"></script>
+    <script src="js/codes/API571/chapters/chapter_3-57-data.js?v=1.2.12"></script>
+    <script src="js/codes/API571/chapters/chapter_3-58-data.js?v=1.2.12"></script>
+    <script src="js/codes/API571/chapters/chapter_3-61-data.js?v=1.2.12"></script>
+    <script src="js/codes/API571/chapters/annex-A.js?v=1.2.12"></script>
+    <script src="js/codes/API571/chapters/annex-B.js?v=1.2.12"></script>
+    <!-- ... más capítulos de API 571 -->
+    
+    <!-- Para API 574 -->
+    <script src="js/codes/API574/chapters/chapter_01-data.js?v=1.2.12"></script>
+    <script src="js/codes/API574/chapters/chapter_02-data.js?v=1.2.12"></script>
+    <script src="js/codes/API574/chapters/chapter_03-data.js?v=1.2.12"></script>
+    <script src="js/codes/API574/chapters/chapter_04-data.js?v=1.2.12"></script>
+    <script src="js/codes/API574/chapters/chapter_05-data.js?v=1.2.12"></script>
+    <script src="js/codes/API574/chapters/chapter_06-data.js?v=1.2.12"></script>
+    <script src="js/codes/API574/chapters/chapter_07-data.js?v=1.2.12"></script>
+    <script src="js/codes/API574/chapters/chapter_08-data.js?v=1.2.12"></script>
+    <script src="js/codes/API574/chapters/chapter_09-data.js?v=1.2.12"></script>
+    <script src="js/codes/API574/chapters/chapter_10-data.js?v=1.2.12"></script>
+    <script src="js/codes/API574/chapters/chapter_11-data.js?v=1.2.12"></script>
+    <script src="js/codes/API574/chapters/chapter_12-data.js?v=1.2.12"></script>
+    <script src="js/codes/API574/chapters/chapter_13-data.js?v=1.2.12"></script>
+    <script src="js/codes/API574/chapters/chapter_14-data.js?v=1.2.12"></script>
+    <!-- ... más capítulos de API 574 -->
+
+    <!-- Para API 576 -->
+    <script src="js/codes/API576/chapters/chapter_05-data.js?v=1.2.12"></script>
+    <script src="js/codes/API576/chapters/chapter_06-data.js?v=1.2.12"></script>
+    <script src="js/codes/API576/chapters/chapter_08-data.js?v=1.2.12"></script>
+    <script src="js/codes/API576/chapters/chapter_10-data.js?v=1.2.12"></script>
+    <script src="js/codes/API576/chapters/annex-B.js?v=1.2.12"></script>
+    <!-- ... más capítulos de API 576 -->
+
+    <!-- Para API 577 -->
+    <script src="js/codes/API577/chapters/chapter_01-data.js?v=1.2.12"></script>
+    <script src="js/codes/API577/chapters/chapter_02-data.js?v=1.2.12"></script>
+    <script src="js/codes/API577/chapters/chapter_03-data.js?v=1.2.12"></script>
+    <script src="js/codes/API577/chapters/chapter_04-data.js?v=1.2.12"></script>
+    <script src="js/codes/API577/chapters/chapter_05-data.js?v=1.2.12"></script>
+    <script src="js/codes/API577/chapters/chapter_06-data.js?v=1.2.12"></script>
+    <script src="js/codes/API577/chapters/chapter_07-data.js?v=1.2.12"></script>
+    <script src="js/codes/API577/chapters/chapter_08-data.js?v=1.2.12"></script>
+    <script src="js/codes/API577/chapters/chapter_09-data.js?v=1.2.12"></script>
+    <script src="js/codes/API577/chapters/chapter_10-data.js?v=1.2.12"></script>
+    <script src="js/codes/API577/chapters/chapter_11-data.js?v=1.2.12"></script>
+    <!-- ... más capítulos de API 577 -->
+
+    <!-- Para API 578 -->
+    <script src="js/codes/API578/chapters/chapter_01-data.js?v=1.2.12"></script>
+    <script src="js/codes/API578/chapters/chapter_02-data.js?v=1.2.12"></script>
+    <script src="js/codes/API578/chapters/chapter_03-data.js?v=1.2.12"></script>
+    <script src="js/codes/API578/chapters/chapter_04-data.js?v=1.2.12"></script>
+    <script src="js/codes/API578/chapters/chapter_05-data.js?v=1.2.12"></script>
+    <script src="js/codes/API578/chapters/chapter_06-data.js?v=1.2.12"></script>
+    <script src="js/codes/API578/chapters/chapter_07-data.js?v=1.2.12"></script>
+    <script src="js/codes/API578/chapters/chapter_08-data.js?v=1.2.12"></script>
+    <script src="js/codes/API578/chapters/chapter_09-data.js?v=1.2.12"></script>
+    <script src="js/codes/API578/chapters/annex-A.js?v=1.2.12"></script>
+    <!-- ... más capítulos de API 578 -->
     
     <!-- Finalmente cargar la lógica de la aplicación -->
-    <script src="js/app.js"></script>
+    <script src="js/app.js?v=1.2.12"></script>
 </body>
 </html>
