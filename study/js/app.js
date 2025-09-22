@@ -421,6 +421,17 @@ async function openExam(codeName, chapterId) {
             case "B": examType = 'api571_annexB'; break;
             default: examType = 'api571_cap02'; // Capítulo por defecto
         }
+    } else if (codeName === 'ASMEV') {
+        switch(chapterId) {
+            case "1": examType = 'asmev_cap01'; break;
+            case "2": examType = 'asmev_cap02'; break;
+            case "6": examType = 'asmev_cap06'; break;
+            case "7": examType = 'asmev_cap07'; break;
+            case "9": examType = 'asmev_cap09'; break;
+            case "10": examType = 'asmev_cap10'; break;
+            case "23": examType = 'asmev_cap23'; break;
+            default: examType = 'asmev_cap01';
+        }
     }
     
     //console.log('Tipo de examen determinado:', examType);
