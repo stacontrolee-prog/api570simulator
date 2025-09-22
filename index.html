@@ -2,294 +2,258 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Exámenes de Certificación API 570</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Description" content="API 570 Piping Inspector Certification">
+    <meta name="Author" content="Alejandro Plaza">
+    <title>API 570 Piping Inspector Certification (2025)</title>
+    <link rel="stylesheet" href="css/styles.css?v=1.3.1">
+    <!-- Agregar iconos de Font Awesome para el botón de menú -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
 </head>
 <body>
     <div class="container">
-        <!-- Vista principal (portada) -->
-        <div id="home-view">
-            <header>
-                <h1>Simulador de Exámenes de Certificación API 570</h1>
-                <p>Preparación integral para la certificación de Inspector de Tuberías</p>
-            </header>
+        <!-- Sidebar con índice interactivo -->
+        <aside class="sidebar" id="sidebar">
+            <h2>API 570 Piping Inspector Certification (2025)</h2>
             
-            <main>
-                <!-- Sección de Guía de Estudio -->
-                <section id="study-guide" class="section">
-                    <h2>Guía de Estudio - Cuerpo de Conocimiento</h2>
-                    <p>Practica con exámenes individuales de cada código del cuerpo de conocimiento para la certificación API 570:</p>
-                    
-                    <div class="exam-selection">
-                        
-                        <div class="exam-card" onclick="selectExam('api570_closed')">
-                            <h3>API 570 - Libro Cerrado</h3>
-                            <p>Inspección, Reparación, Alteración y Reclasificación de Tuberías - Examen sin consulta</p>
-                            <div class="questions-count">181 preguntas</div>
-                        </div>
-                        <div class="exam-card" onclick="selectExam('api570_open')">
-                            <h3>API 570 - Libro Abierto</h3>
-                            <p>Inspección, Reparación, Alteración y Reclasificación de Tuberías - Examen con consulta</p>
-                            <div class="questions-count">24 preguntas</div>
-                        </div>
-                        
+            <!-- Selector de códigos -->
+            <div class="code-selector">
+                <select id="code-select">
+                    <option value="select">-- Select Code --</option>
+                    <option value="API570">API 570</option>
+                    <option value="API571">API 571</option>
+                    <option value="API574">API 574</option>
+                    <option value="API576">API 576</option>
+                    <option value="API577">API 577</option>
+                    <option value="API578">API 578</option>
+                    <option value="ASMEV">ASME V</option>
+                    <!-- Aquí puedes agregar más códigos -->
+                </select>
+            </div>
+            
+            <nav>
+                <ul id="chapter-list">
+                    <!-- Los capítulos se cargarán dinámicamente aquí -->
+                </ul>
+            </nav>
+        </aside>
 
-                        <div class="exam-card" onclick="selectExam('asmeB31_3_closed')">
-                            <h3>ASME B31.3 - Libro Cerrado</h3>
-                            <p>Tuberías de Proceso - Examen sin consulta</p>
-                            <div class="questions-count">62 preguntas</div>
-                        </div>
-                        <div class="exam-card" onclick="selectExam('asmeB31_3_open')">
-                            <h3>ASME B31.3 - Libro Abierto</h3>
-                            <p>Tuberías de Proceso - Examen con consulta</p>
-                            <div class="questions-count">68 preguntas</div>
-                        </div>
-                        
-                
-                        <div class="exam-card" onclick="selectExam('asmeSecV_closed')">
-                            <h3>ASME BPVC Sección V</h3>
-                            <p>Ensayos No Destructivos</p>
-                            <div class="questions-count">110 preguntas</div>
-                        </div>
-                       
-                      
-                        <div class="exam-card" onclick="selectExam('asmeSecIX_closed')">
-                            <h3>ASME BPVC Sección IX</h3>
-                            <p>Calificación de Soldadura y Brazing</p>
-                            <div class="questions-count">100 preguntas</div>
-                        </div>
-
-                        <div class="exam-card" onclick="selectExam('api574_closed')">
-                            <h3>API 574 - Libro Cerrado</h3>
-                            <p>Inspección de Tuberías</p>
-                            <div class="questions-count">95 preguntas</div>
-                        </div>
-                        <div class="exam-card" onclick="selectExam('api574_open')">
-                            <h3>API 574 - Libro Abierto</h3>
-                            <p>Inspección de Tuberías</p>
-                            <div class="questions-count">17 preguntas</div>
-                        </div>
-
-                        <div class="exam-card" onclick="selectExam('api578_closed')">
-                            <h3>API 578</h3>
-                            <p>Verificación de Materiales de Aleación</p>
-                            <div class="questions-count">26 preguntas</div>
-                        </div>
-                       
-                    
-                        
+        <!-- Contenido principal -->
+        <main class="content">
+            <!-- Botón para alternar el sidebar en móviles -->
+            <button class="toggle-sidebar" id="toggle-sidebar">
+                <i class="fas fa-bars"></i>
+            </button>
             
-                        <div class="exam-card" onclick="selectExam('api577_closed')">
-                            <h3>API 577</h3>
-                            <p>Soldadura, Inspección y Metalurgia</p>
-                            <div class="questions-count">60 preguntas</div>
-                        </div>
-                      
-                        
-                        
-                        
-                       
-                        <div class="exam-card" onclick="selectExam('asmeB16_5_closed')">
-                            <h3>ASME B16.5 - Libro Cerrado</h3>
-                            <p>Bridas de Tubería y Accesorios Bridados - Examen sin consulta</p>
-                            <div class="questions-count">15 preguntas</div>
-                        </div>
-                        <div class="exam-card" onclick="selectExam('asmeB16_5_open')">
-                            <h3>ASME B16.5 - Libro Abierto</h3>
-                            <p>Bridas de Tubería y Accesorios Bridados - Examen con consulta</p>
-                            <div class="questions-count">17 preguntas</div>
-                        </div>
-                        
-                        
-                    </div>
-                </section>
-                
-                <!-- Sección de Examen Final -->
-                <section id="final-exam" class="section">
-                    <h2>Examen Final de Certificación API 570</h2>
-                    <p>Realiza el examen completo simulando las condiciones reales de la certificación:</p>
-                    
-                    <div class="final-exam-options">
-                       
-                    <div class="final-exam-card" onclick="selectExam('api570_final_closed_book')">
-                        <div class="exam-icon">📚</div>
-                        <h3>Examen Final API 570 - Libro Cerrado</h3>
-                        <p>Parte 1 del examen final sin consulta</p>
-                        <div class="exam-details">
-                            <span class="detail-item">⏱️ 2.75 horas</span>
-                            <span class="detail-item">📝 100 preguntas</span>
-                        </div>
-                        <button class="btn">Comenzar</button>
-                    </div>
-                    <div class="final-exam-card" onclick="selectExam('api570_final_open_book')">
-                        <div class="exam-icon">📖</div>
-                        <h3>Examen Final API 570 - Libro Abierto</h3>
-                        <p>Parte 2 del examen final con consulta permitida</p>
-                        <div class="exam-details">
-                            <span class="detail-item">⏱️ 3.75 horas</span>
-                            <span class="detail-item">📝 50 preguntas</span>
-                        </div>
-                        <button class="btn">Comenzar</button>
-                    </div>
-                    
-                    
-                    </div>
-                </section>
-            </main>
-            
-            <footer>
-                <p>&copy; 2025 Simulador de Exámenes de Certificación API 570. Todos los derechos reservados.</p>
-                <p>Desarrollado por Alejandro Plaza</p>
-            </footer>
-        </div>
-        
-        <!-- Vista de ingreso de nombre -->
-        <div id="name-view" class="hidden">
-            <h2>Ingresa tu nombre</h2>
-            <div class="name-form">
-                <input type="text" id="user-name" placeholder="Tu nombre completo" />
-                <button class="btn" onclick="startExam()">Comenzar Examen</button>
-                <button class="btn btn-back" onclick="backToHome()">Volver al Inicio</button>
-            </div>
-        </div>
-        
-        <!-- Vista del examen -->
-        <div id="exam-view" class="hidden">
-            <div class="exam-header">
-                <div class="exam-title" id="exam-title">Examen</div>
-                <div class="exam-info">
-                    <div class="user-name" id="display-name">Usuario</div>
-                    <div class="timer" id="timer">00:00</div>
-                </div>
+            <div class="language-selector">
+                <button id="btn-en" class="active">English</button>
+                <button id="btn-es">Español</button>
             </div>
             
-            <div class="progress-container">
-                <div class="progress-bar" id="progress-bar"></div>
-            </div>
-            <div class="progress-text" id="progress-text">Pregunta 1 de 100</div>
+            <!-- Contenedor para el contenido de los capítulos -->
+            <div id="chapter-content">
+            <h1>API 570 Piping Inspector Certification (2025)</h1>
             
-            <div class="exam-navigation">
-                <button class="btn-nav" onclick="openQuestionIndex()">
-                    📋 Índice de Preguntas
-                </button>
-                <button class="btn-nav" onclick="toggleMarkForReview()" id="mark-btn">
-                    ⭐ Marcar para Revisar
-                </button>
-            </div>
+            <img class="img-float-left" alt="ANSI Certified" height="213" width="250" src="image/ANAB-Symbol-RGB-17024-Personnel-Certification-Body.png" />
             
-            <!-- Panel de referencias para libro abierto -->
-            <div id="references-panel" class="hidden">
-                <div class="references-header">
-                    <h3>Referencias y Documentos</h3>
-                </div>
-                <div class="references-content">
-                    <div class="references-section">
-                        <h4>Normas de Referencia</h4>
-                        <ul id="standards-list">
-                            <!-- Se llenará dinámicamente -->
+            <p><em>This exam is scheduled to be administered <a href="https://www.api.org/products-and-services/individual-certification-programs/schedule-exams">in-person</a> at designated test centers only.</em></p>
+            
+            <p>Certified API 570 Piping inspectors must have a broad knowledge base relating to maintenance, inspection, alteration and repair of in-service metallic piping systems. The API 570 examination is designed to determine if applicants have such knowledge.</p>
+            
+            <p>This certification program benefits employers and the industry as a whole by helping to:</p>
+           
+            <ul class="main-list">
+                <li>Provide a continued high level of safety through the use of inspectors specialized in process piping</li>
+                <li>Improve management control of process unit inspection, repair, alteration and rerating</li>
+                <li>Reduce the potential for inspection delays resulting from regulatory requirements</li>
+            </ul>
+           
+            <p>API 570 certification is valid for a three-year term and is accredited by the American National Standards Institute (ANSI). This accreditation ensures that the exam has been developed to the highest standard for openness and integrity and meets the rigorous requirements established under the International Organization for Standardization (ISO) 17024.</p>
+            
+            <hr />
+            
+            <div class="subsection">
+                <h2>1. Studying for the Exam</h2>
+                <ul class="main-list">
+                    <li>
+                        <span class="list-title">Publications Effectivity Sheet</span> - Questions on the API 570 exam are derived from the publications listed in this document. Only the specific sections of publications that are listed on the Effectivity Sheet will be available to you during the open-book portion of the exam.
+                        <ul class="sub-list">
+                            <li><strong><a href="pdf/570_EKS_Feburary 2025_final.pdf" class="link-pdf" target="_blank" rel="noopener noreferrer">API 570 Publications Effectivity Sheet</a></strong> <em>for 2025 exams</em></li>
                         </ul>
-                    </div>
-                    <div id="attachments-section" class="references-section hidden">
-                        <h4>Documentos Adjuntos</h4>
-                        <ul id="attachments-list">
-                            <!-- Se llenará dinámicamente para preguntas 41-50 -->
+                    </li>
+                    <li>
+                        <span class="list-title">Body of Knowledge</span> - List of specific topics included in the API 570 exam
+                        <ul class="sub-list">
+                            <li><strong><a href="pdf/BOK_570_Feburary 2025_final.pdf" class="link-pdf" target="_blank" rel="noopener noreferrer">API 570 Body of Knowledge</a></strong> <em>for 2025 exams</em></li>
                         </ul>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
             
-            <div class="question-container">
-                <div class="question" id="question-text">Cargando pregunta...</div>
-                <div class="options" id="options-container">
-                    <!-- Las opciones se generarán dinámicamente -->
-                </div>
+            <hr />
+            
+            <div class="subsection">
+                <h2>2. Exam Structure</h2>
+                <ul class="main-list">
+                    <li>The API 570 exam day is 7.5 hours long - a short tutorial session, 2.75 hours for the closed-book portion, a 45-minute lunch break and 3.75 hours for the open-book portion.</li>
+                    <li>There are 170 questions on the API 570 exam, of which only 140 are scored. The remaining 30 are pretest questions.
+                        <ul class="sub-list">
+                            <li><a href="pdf/ICP-POL-205_Pretest Questions on API Exams.pdf" class="link-pdf" target="_blank" rel="noopener noreferrer">Pretest Questions FAQs</a></li>
+                        </ul>
+                    </li>
+                    <li>There are 110 closed-book questions and 60 open-book questions.</li>
+                    <li>View the <a href="pdf/Examinations/ICP-PD-201a_ICP Tutorial 510_570_653.pdf" class="link-pdf" target="_blank" rel="noopener noreferrer">Exam Tutorial</a> before exam day to familiarize yourself with the format.</li>
+                </ul>
             </div>
             
-            <div style="margin-top: 30px; display: flex; justify-content: space-between;">
-                <button class="btn" id="prev-btn" onclick="prevQuestion()" disabled>Anterior</button>
-                <div>
-                    <button class="btn" id="next-btn" onclick="nextQuestion()" disabled>Siguiente</button>
-                </div>
+            <hr />
+            
+            <div class="subsection">
+                <h2>3. What Can You Bring Into the Exam</h2>
+                <ul class="main-list">
+                    <li>Papers, notes and books are <em>not allowed</em> in Prometric computer testing centers.</li>
+                    <li>PDF documents of pertinent codes and standards will be available on your computer during the open book portion of the exam and will be presented in English.</li>
+                    <li><a href="https://www.api.org/products-and-services/individual-certification-programs/schedule-exams">Learn More about Exam Day</a></li>
+                </ul>
             </div>
             
-            <div style="margin-top: 15px;">
-                <button class="btn btn-back" onclick="confirmExit()">Salir del Examen</button>
+            <hr />
+            
+            <div class="subsection">
+                <h2>4. Additional Resources</h2>
+                <ul class="main-list">
+                    <li>Examination Policies & Notifications: <a href="/products-and-services/individual-certification-programs/policies">Policies</a></li>
+                    <li>Purchasing Authorized API Publications: <a href="/products-and-services/standards/purchase">API Publications Store</a></li>
+                    <li><a href="https://anabpd.ansi.org/Accreditation/credentialing/personnel-certification/AllDirectoryDetails?&prgID=201&OrgId=72359&statusID=4" class="external-link">ANSI Accreditation</a></li>
+                </ul>
             </div>
         </div>
-        
-        <!-- Vista del índice de preguntas -->
-        <div id="index-view" class="hidden">
-            <div class="index-header">
-                <h2>Índice de Preguntas</h2>
-                <div class="index-legend">
-                    <div class="legend-item">
-                        <span class="legend-color unanswered"></span>
-                        <span>Sin responder</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-color answered"></span>
-                        <span>Respondida</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-color marked"></span>
-                        <span>Marcada para revisar</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="index-container" id="index-container">
-                <!-- Las preguntas se generarán dinámicamente -->
-            </div>
-            
-            <div class="index-actions">
-                <button class="btn" onclick="closeQuestionIndex()">Volver al Examen</button>
-                <button class="btn btn-back" onclick="goToUnanswered()">Ir a No Respondidas</button>
-                <button class="btn btn-back" onclick="goToMarked()">Ir a Marcadas</button>
-            </div>
-        </div>
-        
-        <!-- Vista de resultados -->
-        <div id="result-view" class="hidden">
-            <h2>Resultados del Examen</h2>
-            <div class="result-container">
-                <div class="result-score" id="result-score">0%</div>
-                <div class="result-message" id="result-message">¡Buen trabajo!</div>
-                
-                <div class="result-details">
-                    <div class="result-item">
-                        <div class="result-value" id="correct-answers">0</div>
-                        <div class="result-label">Respuestas Correctas</div>
-                    </div>
-                    <div class="result-item">
-                        <div class="result-value" id="incorrect-answers">0</div>
-                        <div class="result-label">Respuestas Incorrectas</div>
-                    </div>
-                    <div class="result-item">
-                        <div class="result-value" id="time-spent">00:00</div>
-                        <div class="result-label">Tiempo Utilizado</div>
-                    </div>
-                </div>
-                
-                <button class="btn" onclick="reviewAnswers()">Revisar Respuestas</button>
-                <button class="btn" onclick="restartExam()">Reiniciar Examen</button>
-                <button class="btn btn-back" onclick="backToHome()">Volver al Inicio</button>
-            </div>
-        </div>
-        
-        <!-- Vista de revisión de respuestas -->
-        <div id="review-view" class="hidden">
-            <h2>Revisión de Respuestas</h2>
-            <div class="review-container" id="review-container">
-                <!-- Las preguntas y respuestas se generarán dinámicamente -->
-            </div>
-            
-            <div style="margin-top: 30px;">
-                <button class="btn btn-back" onclick="backToResults()">Volver a Resultados</button>
-            </div>
-        </div>
+            <!-- Contenedor para el examen (inicialmente oculto) -->
+            <div id="exam-container"></div>
+        </main>
     </div>
-    <script src="js/main.js?v=1.0.1"></script>
-</body>
 
+    <!-- Footer -->
+    <footer class="footer">
+        
+        
+        <div class="footer-bottom">
+            <p>&copy; API 570 Piping Inspector Certification (2025) Coded by | Alejandro Plaza. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cargar primero el gestor de códigos -->
+    <script src="js/codes-manager.js?v=1.3.1"></script>
+    
+    <!-- Cargar los datos de cada código -->
+    <script src="js/codes/API570-data.js?v=1.3.1"></script>
+    <script src="js/codes/API574-data.js?v=1.3.1"></script>
+    <script src="js/codes/API576-data.js?v=1.3.1"></script>
+    <script src="js/codes/API577-data.js?v=1.3.1"></script>
+    <script src="js/codes/API578-data.js?v=1.3.1"></script>
+    
+    <!-- Cargar los capítulos de cada código -->
+    <!-- Para API 570 -->
+    <script src="js/codes/API570/chapters/chapter_01-data.js?v=1.3.1"></script>
+    <script src="js/codes/API570/chapters/chapter_02-data.js?v=1.3.1"></script>
+    <script src="js/codes/API570/chapters/chapter_03-data.js?v=1.3.1"></script>
+    <script src="js/codes/API570/chapters/chapter_04-data.js?v=1.3.1"></script>
+    <script src="js/codes/API570/chapters/chapter_05-data.js?v=1.3.1"></script>
+    <script src="js/codes/API570/chapters/chapter_06-data.js?v=1.3.1"></script>
+    <script src="js/codes/API570/chapters/chapter_07-data.js?v=1.3.1"></script>
+    <script src="js/codes/API570/chapters/chapter_08-data.js?v=1.3.1"></script>
+    <script src="js/codes/API570/chapters/chapter_09-data.js?v=1.3.1"></script>
+    <script src="js/codes/API570/chapters/annex-A.js?v=1.3.1"></script>
+    <script src="js/codes/API570/chapters/annex-B.js?v=1.3.1"></script>
+    <!-- ... más capítulos de API 570 -->
+
+    <!-- Para API 571 -->
+    <script src="js/codes/API571/chapters/chapter_02-data.js?v=1.3.1"></script>
+    <script src="js/codes/API571/chapters/chapter_3-3-data.js?v=1.3.1"></script>
+    <script src="js/codes/API571/chapters/chapter_3-8-data.js?v=1.3.1"></script>
+    <script src="js/codes/API571/chapters/chapter_3-9-data.js?v=1.3.1"></script>
+    <script src="js/codes/API571/chapters/chapter_3-14-data.js?v=1.3.1"></script>
+    <script src="js/codes/API571/chapters/chapter_3-15-data.js?v=1.3.1"></script>
+    <script src="js/codes/API571/chapters/chapter_3-17-data.js?v=1.3.1"></script>
+    <script src="js/codes/API571/chapters/chapter_3-22-data.js?v=1.3.1"></script>
+    <script src="js/codes/API571/chapters/chapter_3-27-data.js?v=1.3.1"></script>
+    <script src="js/codes/API571/chapters/chapter_3-31-data.js?v=1.3.1"></script>
+    <script src="js/codes/API571/chapters/chapter_3-37-data.js?v=1.3.1"></script>
+    <script src="js/codes/API571/chapters/chapter_3-43-data.js?v=1.3.1"></script>
+    <script src="js/codes/API571/chapters/chapter_3-45-data.js?v=1.3.1"></script>
+    <script src="js/codes/API571/chapters/chapter_3-57-data.js?v=1.3.1"></script>
+    <script src="js/codes/API571/chapters/chapter_3-58-data.js?v=1.3.1"></script>
+    <script src="js/codes/API571/chapters/chapter_3-61-data.js?v=1.3.1"></script>
+    <script src="js/codes/API571/chapters/annex-A.js?v=1.3.1"></script>
+    <script src="js/codes/API571/chapters/annex-B.js?v=1.3.1"></script>
+    <!-- ... más capítulos de API 571 -->
+    
+    <!-- Para API 574 -->
+    <script src="js/codes/API574/chapters/chapter_01-data.js?v=1.3.1"></script>
+    <script src="js/codes/API574/chapters/chapter_02-data.js?v=1.3.1"></script>
+    <script src="js/codes/API574/chapters/chapter_03-data.js?v=1.3.1"></script>
+    <script src="js/codes/API574/chapters/chapter_04-data.js?v=1.3.1"></script>
+    <script src="js/codes/API574/chapters/chapter_05-data.js?v=1.3.1"></script>
+    <script src="js/codes/API574/chapters/chapter_06-data.js?v=1.3.1"></script>
+    <script src="js/codes/API574/chapters/chapter_07-data.js?v=1.3.1"></script>
+    <script src="js/codes/API574/chapters/chapter_08-data.js?v=1.3.1"></script>
+    <script src="js/codes/API574/chapters/chapter_09-data.js?v=1.3.1"></script>
+    <script src="js/codes/API574/chapters/chapter_10-data.js?v=1.3.1"></script>
+    <script src="js/codes/API574/chapters/chapter_11-data.js?v=1.3.1"></script>
+    <script src="js/codes/API574/chapters/chapter_12-data.js?v=1.3.1"></script>
+    <script src="js/codes/API574/chapters/chapter_13-data.js?v=1.3.1"></script>
+    <script src="js/codes/API574/chapters/chapter_14-data.js?v=1.3.1"></script>
+    <!-- ... más capítulos de API 574 -->
+
+    <!-- Para API 576 -->
+    <script src="js/codes/API576/chapters/chapter_05-data.js?v=1.3.1"></script>
+    <script src="js/codes/API576/chapters/chapter_06-data.js?v=1.3.1"></script>
+    <script src="js/codes/API576/chapters/chapter_08-data.js?v=1.3.1"></script>
+    <script src="js/codes/API576/chapters/chapter_10-data.js?v=1.3.1"></script>
+    <script src="js/codes/API576/chapters/annex-B.js?v=1.3.1"></script>
+    <!-- ... más capítulos de API 576 -->
+
+    <!-- Para API 577 -->
+    <script src="js/codes/API577/chapters/chapter_01-data.js?v=1.3.1"></script>
+    <script src="js/codes/API577/chapters/chapter_02-data.js?v=1.3.1"></script>
+    <script src="js/codes/API577/chapters/chapter_03-data.js?v=1.3.1"></script>
+    <script src="js/codes/API577/chapters/chapter_04-data.js?v=1.3.1"></script>
+    <script src="js/codes/API577/chapters/chapter_05-data.js?v=1.3.1"></script>
+    <script src="js/codes/API577/chapters/chapter_06-data.js?v=1.3.1"></script>
+    <script src="js/codes/API577/chapters/chapter_07-data.js?v=1.3.1"></script>
+    <script src="js/codes/API577/chapters/chapter_08-data.js?v=1.3.1"></script>
+    <script src="js/codes/API577/chapters/chapter_09-data.js?v=1.3.1"></script>
+    <script src="js/codes/API577/chapters/chapter_10-data.js?v=1.3.1"></script>
+    <script src="js/codes/API577/chapters/chapter_11-data.js?v=1.3.1"></script>
+    <!-- ... más capítulos de API 577 -->
+
+    <!-- Para API 578 -->
+    <script src="js/codes/API578/chapters/chapter_01-data.js?v=1.3.1"></script>
+    <script src="js/codes/API578/chapters/chapter_02-data.js?v=1.3.1"></script>
+    <script src="js/codes/API578/chapters/chapter_03-data.js?v=1.3.1"></script>
+    <script src="js/codes/API578/chapters/chapter_04-data.js?v=1.3.1"></script>
+    <script src="js/codes/API578/chapters/chapter_05-data.js?v=1.3.1"></script>
+    <script src="js/codes/API578/chapters/chapter_06-data.js?v=1.3.1"></script>
+    <script src="js/codes/API578/chapters/chapter_07-data.js?v=1.3.1"></script>
+    <script src="js/codes/API578/chapters/chapter_08-data.js?v=1.3.1"></script>
+    <script src="js/codes/API578/chapters/chapter_09-data.js?v=1.3.1"></script>
+    <script src="js/codes/API578/chapters/annex-A.js?v=1.3.1"></script>
+    <!-- ... más capítulos de API 578 -->
+
+    <!-- Para ASME V -->
+    <script src="js/codes/ASMEV/chapters/chapter_01-data.js?v=1.3.1"></script>
+    <script src="js/codes/ASMEV/chapters/chapter_02-data.js?v=1.3.1"></script>
+    <script src="js/codes/ASMEV/chapters/chapter_06-data.js?v=1.3.1"></script>
+    <script src="js/codes/ASMEV/chapters/chapter_07-data.js?v=1.3.1"></script>
+    <script src="js/codes/ASMEV/chapters/chapter_09-data.js?v=1.3.1"></script>
+    <script src="js/codes/ASMEV/chapters/chapter_10-data.js?v=1.3.1"></script>
+    <script src="js/codes/ASMEV/chapters/chapter_23-data.js?v=1.3.1"></script>
+    <!-- ... más capítulos de ASME V -->
+    
+    <!-- Finalmente cargar la lógica de la aplicación -->
+    <script src="js/app.js?v=1.3.1"></script>
+</body>
 </html>
