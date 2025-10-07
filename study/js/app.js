@@ -432,6 +432,11 @@ async function openExam(codeName, chapterId) {
             case "23": examType = 'asmev_cap23'; break;
             default: examType = 'asmev_cap01';
         }
+    } else if (codeName === 'ASMEPCC2') {
+        switch(chapterId) {
+            case "201": examType = 'asmepcc2_cap201'; break;
+            default: examType = 'asmepcc2_cap201';
+        }
     }
     
     //console.log('Tipo de examen determinado:', examType);
