@@ -7,7 +7,7 @@
     <meta name="Description" content="API 570 Piping Inspector Certification">
     <meta name="Author" content="Alejandro Plaza">
     <title>API 570 Piping Inspector Certification (2025)</title>
-    <link rel="stylesheet" href="css/styles.css?v=1.3.1">
+    <link rel="stylesheet" href="css/styles.css?v=1.3.4">
     <!-- Agregar iconos de Font Awesome para el botón de menú -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -30,6 +30,7 @@
                     <option value="API577">API 577</option>
                     <option value="API578">API 578</option>
                     <option value="ASMEV">ASME V</option>
+                    <option value="ASMEPCC2">ASME PCC-2</option>
                     <!-- Aquí puedes agregar más códigos -->
                 </select>
             </div>
@@ -52,6 +53,12 @@
                 <button id="btn-en" class="active">English</button>
                 <button id="btn-es">Español</button>
             </div>
+
+
+            <!-- Nuevo botón para leer en voz alta -->
+            <button id="btn-read-aloud" class="read-aloud-btn">
+                <i class="fas fa-volume-up"></i> Leer en voz alta
+            </button>
             
             <!-- Contenedor para el contenido de los capítulos -->
             <div id="chapter-content">
@@ -105,7 +112,7 @@
                         </ul>
                     </li>
                     <li>There are 110 closed-book questions and 60 open-book questions.</li>
-                    <li>View the <a href="pdf/Examinations/ICP-PD-201a_ICP Tutorial 510_570_653.pdf" class="link-pdf" target="_blank" rel="noopener noreferrer">Exam Tutorial</a> before exam day to familiarize yourself with the format.</li>
+                    <li>View the <a href="pdf/ICP-PD-201a_ICP Tutorial 510_570_653.pdf" class="link-pdf" target="_blank" rel="noopener noreferrer">Exam Tutorial</a> before exam day to familiarize yourself with the format.</li>
                 </ul>
             </div>
             
@@ -146,114 +153,206 @@
     </footer>
 
     <!-- Cargar primero el gestor de códigos -->
-    <script src="js/codes-manager.js?v=1.3.1"></script>
+    <script src="js/codes-manager.js?v=1.3.4"></script>
     
     <!-- Cargar los datos de cada código -->
-    <script src="js/codes/API570-data.js?v=1.3.1"></script>
-    <script src="js/codes/API574-data.js?v=1.3.1"></script>
-    <script src="js/codes/API576-data.js?v=1.3.1"></script>
-    <script src="js/codes/API577-data.js?v=1.3.1"></script>
-    <script src="js/codes/API578-data.js?v=1.3.1"></script>
+    <script src="js/codes/API570-data.js?v=1.3.4"></script>
+    <script src="js/codes/API574-data.js?v=1.3.4"></script>
+    <script src="js/codes/API576-data.js?v=1.3.4"></script>
+    <script src="js/codes/API577-data.js?v=1.3.4"></script>
+    <script src="js/codes/API578-data.js?v=1.3.4"></script>
     
     <!-- Cargar los capítulos de cada código -->
     <!-- Para API 570 -->
-    <script src="js/codes/API570/chapters/chapter_01-data.js?v=1.3.1"></script>
-    <script src="js/codes/API570/chapters/chapter_02-data.js?v=1.3.1"></script>
-    <script src="js/codes/API570/chapters/chapter_03-data.js?v=1.3.1"></script>
-    <script src="js/codes/API570/chapters/chapter_04-data.js?v=1.3.1"></script>
-    <script src="js/codes/API570/chapters/chapter_05-data.js?v=1.3.1"></script>
-    <script src="js/codes/API570/chapters/chapter_06-data.js?v=1.3.1"></script>
-    <script src="js/codes/API570/chapters/chapter_07-data.js?v=1.3.1"></script>
-    <script src="js/codes/API570/chapters/chapter_08-data.js?v=1.3.1"></script>
-    <script src="js/codes/API570/chapters/chapter_09-data.js?v=1.3.1"></script>
-    <script src="js/codes/API570/chapters/annex-A.js?v=1.3.1"></script>
-    <script src="js/codes/API570/chapters/annex-B.js?v=1.3.1"></script>
+    <script src="js/codes/API570/chapters/chapter_01-data.js?v=1.3.4"></script>
+    <script src="js/codes/API570/chapters/chapter_02-data.js?v=1.3.4"></script>
+    <script src="js/codes/API570/chapters/chapter_03-data.js?v=1.3.4"></script>
+    <script src="js/codes/API570/chapters/chapter_04-data.js?v=1.3.4"></script>
+    <script src="js/codes/API570/chapters/chapter_05-data.js?v=1.3.4"></script>
+    <script src="js/codes/API570/chapters/chapter_06-data.js?v=1.3.4"></script>
+    <script src="js/codes/API570/chapters/chapter_07-data.js?v=1.3.4"></script>
+    <script src="js/codes/API570/chapters/chapter_08-data.js?v=1.3.4"></script>
+    <script src="js/codes/API570/chapters/chapter_09-data.js?v=1.3.4"></script>
+    <script src="js/codes/API570/chapters/annex-A.js?v=1.3.4"></script>
+    <script src="js/codes/API570/chapters/annex-B.js?v=1.3.4"></script>
     <!-- ... más capítulos de API 570 -->
 
     <!-- Para API 571 -->
-    <script src="js/codes/API571/chapters/chapter_02-data.js?v=1.3.1"></script>
-    <script src="js/codes/API571/chapters/chapter_3-3-data.js?v=1.3.1"></script>
-    <script src="js/codes/API571/chapters/chapter_3-8-data.js?v=1.3.1"></script>
-    <script src="js/codes/API571/chapters/chapter_3-9-data.js?v=1.3.1"></script>
-    <script src="js/codes/API571/chapters/chapter_3-14-data.js?v=1.3.1"></script>
-    <script src="js/codes/API571/chapters/chapter_3-15-data.js?v=1.3.1"></script>
-    <script src="js/codes/API571/chapters/chapter_3-17-data.js?v=1.3.1"></script>
-    <script src="js/codes/API571/chapters/chapter_3-22-data.js?v=1.3.1"></script>
-    <script src="js/codes/API571/chapters/chapter_3-27-data.js?v=1.3.1"></script>
-    <script src="js/codes/API571/chapters/chapter_3-31-data.js?v=1.3.1"></script>
-    <script src="js/codes/API571/chapters/chapter_3-37-data.js?v=1.3.1"></script>
-    <script src="js/codes/API571/chapters/chapter_3-43-data.js?v=1.3.1"></script>
-    <script src="js/codes/API571/chapters/chapter_3-45-data.js?v=1.3.1"></script>
-    <script src="js/codes/API571/chapters/chapter_3-57-data.js?v=1.3.1"></script>
-    <script src="js/codes/API571/chapters/chapter_3-58-data.js?v=1.3.1"></script>
-    <script src="js/codes/API571/chapters/chapter_3-61-data.js?v=1.3.1"></script>
-    <script src="js/codes/API571/chapters/annex-A.js?v=1.3.1"></script>
-    <script src="js/codes/API571/chapters/annex-B.js?v=1.3.1"></script>
+    <script src="js/codes/API571/chapters/chapter_02-data.js?v=1.3.4"></script>
+    <script src="js/codes/API571/chapters/chapter_3-3-data.js?v=1.3.4"></script>
+    <script src="js/codes/API571/chapters/chapter_3-8-data.js?v=1.3.4"></script>
+    <script src="js/codes/API571/chapters/chapter_3-9-data.js?v=1.3.4"></script>
+    <script src="js/codes/API571/chapters/chapter_3-14-data.js?v=1.3.4"></script>
+    <script src="js/codes/API571/chapters/chapter_3-15-data.js?v=1.3.4"></script>
+    <script src="js/codes/API571/chapters/chapter_3-17-data.js?v=1.3.4"></script>
+    <script src="js/codes/API571/chapters/chapter_3-22-data.js?v=1.3.4"></script>
+    <script src="js/codes/API571/chapters/chapter_3-27-data.js?v=1.3.4"></script>
+    <script src="js/codes/API571/chapters/chapter_3-31-data.js?v=1.3.4"></script>
+    <script src="js/codes/API571/chapters/chapter_3-37-data.js?v=1.3.4"></script>
+    <script src="js/codes/API571/chapters/chapter_3-43-data.js?v=1.3.4"></script>
+    <script src="js/codes/API571/chapters/chapter_3-45-data.js?v=1.3.4"></script>
+    <script src="js/codes/API571/chapters/chapter_3-57-data.js?v=1.3.4"></script>
+    <script src="js/codes/API571/chapters/chapter_3-58-data.js?v=1.3.4"></script>
+    <script src="js/codes/API571/chapters/chapter_3-61-data.js?v=1.3.4"></script>
+    <script src="js/codes/API571/chapters/annex-A.js?v=1.3.4"></script>
+    <script src="js/codes/API571/chapters/annex-B.js?v=1.3.4"></script>
     <!-- ... más capítulos de API 571 -->
     
     <!-- Para API 574 -->
-    <script src="js/codes/API574/chapters/chapter_01-data.js?v=1.3.1"></script>
-    <script src="js/codes/API574/chapters/chapter_02-data.js?v=1.3.1"></script>
-    <script src="js/codes/API574/chapters/chapter_03-data.js?v=1.3.1"></script>
-    <script src="js/codes/API574/chapters/chapter_04-data.js?v=1.3.1"></script>
-    <script src="js/codes/API574/chapters/chapter_05-data.js?v=1.3.1"></script>
-    <script src="js/codes/API574/chapters/chapter_06-data.js?v=1.3.1"></script>
-    <script src="js/codes/API574/chapters/chapter_07-data.js?v=1.3.1"></script>
-    <script src="js/codes/API574/chapters/chapter_08-data.js?v=1.3.1"></script>
-    <script src="js/codes/API574/chapters/chapter_09-data.js?v=1.3.1"></script>
-    <script src="js/codes/API574/chapters/chapter_10-data.js?v=1.3.1"></script>
-    <script src="js/codes/API574/chapters/chapter_11-data.js?v=1.3.1"></script>
-    <script src="js/codes/API574/chapters/chapter_12-data.js?v=1.3.1"></script>
-    <script src="js/codes/API574/chapters/chapter_13-data.js?v=1.3.1"></script>
-    <script src="js/codes/API574/chapters/chapter_14-data.js?v=1.3.1"></script>
+    <script src="js/codes/API574/chapters/chapter_01-data.js?v=1.3.4"></script>
+    <script src="js/codes/API574/chapters/chapter_02-data.js?v=1.3.4"></script>
+    <script src="js/codes/API574/chapters/chapter_03-data.js?v=1.3.4"></script>
+    <script src="js/codes/API574/chapters/chapter_04-data.js?v=1.3.4"></script>
+    <script src="js/codes/API574/chapters/chapter_05-data.js?v=1.3.4"></script>
+    <script src="js/codes/API574/chapters/chapter_06-data.js?v=1.3.4"></script>
+    <script src="js/codes/API574/chapters/chapter_07-data.js?v=1.3.4"></script>
+    <script src="js/codes/API574/chapters/chapter_08-data.js?v=1.3.4"></script>
+    <script src="js/codes/API574/chapters/chapter_09-data.js?v=1.3.4"></script>
+    <script src="js/codes/API574/chapters/chapter_10-data.js?v=1.3.4"></script>
+    <script src="js/codes/API574/chapters/chapter_11-data.js?v=1.3.4"></script>
+    <script src="js/codes/API574/chapters/chapter_12-data.js?v=1.3.4"></script>
+    <script src="js/codes/API574/chapters/chapter_13-data.js?v=1.3.4"></script>
+    <script src="js/codes/API574/chapters/chapter_14-data.js?v=1.3.4"></script>
     <!-- ... más capítulos de API 574 -->
 
     <!-- Para API 576 -->
-    <script src="js/codes/API576/chapters/chapter_05-data.js?v=1.3.1"></script>
-    <script src="js/codes/API576/chapters/chapter_06-data.js?v=1.3.1"></script>
-    <script src="js/codes/API576/chapters/chapter_08-data.js?v=1.3.1"></script>
-    <script src="js/codes/API576/chapters/chapter_10-data.js?v=1.3.1"></script>
-    <script src="js/codes/API576/chapters/annex-B.js?v=1.3.1"></script>
+    <script src="js/codes/API576/chapters/chapter_05-data.js?v=1.3.4"></script>
+    <script src="js/codes/API576/chapters/chapter_06-data.js?v=1.3.4"></script>
+    <script src="js/codes/API576/chapters/chapter_08-data.js?v=1.3.4"></script>
+    <script src="js/codes/API576/chapters/chapter_10-data.js?v=1.3.4"></script>
+    <script src="js/codes/API576/chapters/annex-B.js?v=1.3.4"></script>
     <!-- ... más capítulos de API 576 -->
 
     <!-- Para API 577 -->
-    <script src="js/codes/API577/chapters/chapter_01-data.js?v=1.3.1"></script>
-    <script src="js/codes/API577/chapters/chapter_02-data.js?v=1.3.1"></script>
-    <script src="js/codes/API577/chapters/chapter_03-data.js?v=1.3.1"></script>
-    <script src="js/codes/API577/chapters/chapter_04-data.js?v=1.3.1"></script>
-    <script src="js/codes/API577/chapters/chapter_05-data.js?v=1.3.1"></script>
-    <script src="js/codes/API577/chapters/chapter_06-data.js?v=1.3.1"></script>
-    <script src="js/codes/API577/chapters/chapter_07-data.js?v=1.3.1"></script>
-    <script src="js/codes/API577/chapters/chapter_08-data.js?v=1.3.1"></script>
-    <script src="js/codes/API577/chapters/chapter_09-data.js?v=1.3.1"></script>
-    <script src="js/codes/API577/chapters/chapter_10-data.js?v=1.3.1"></script>
-    <script src="js/codes/API577/chapters/chapter_11-data.js?v=1.3.1"></script>
+    <script src="js/codes/API577/chapters/chapter_01-data.js?v=1.3.4"></script>
+    <script src="js/codes/API577/chapters/chapter_02-data.js?v=1.3.4"></script>
+    <script src="js/codes/API577/chapters/chapter_03-data.js?v=1.3.4"></script>
+    <script src="js/codes/API577/chapters/chapter_04-data.js?v=1.3.4"></script>
+    <script src="js/codes/API577/chapters/chapter_05-data.js?v=1.3.4"></script>
+    <script src="js/codes/API577/chapters/chapter_06-data.js?v=1.3.4"></script>
+    <script src="js/codes/API577/chapters/chapter_07-data.js?v=1.3.4"></script>
+    <script src="js/codes/API577/chapters/chapter_08-data.js?v=1.3.4"></script>
+    <script src="js/codes/API577/chapters/chapter_09-data.js?v=1.3.4"></script>
+    <script src="js/codes/API577/chapters/chapter_10-data.js?v=1.3.4"></script>
+    <script src="js/codes/API577/chapters/chapter_11-data.js?v=1.3.4"></script>
     <!-- ... más capítulos de API 577 -->
 
     <!-- Para API 578 -->
-    <script src="js/codes/API578/chapters/chapter_01-data.js?v=1.3.1"></script>
-    <script src="js/codes/API578/chapters/chapter_02-data.js?v=1.3.1"></script>
-    <script src="js/codes/API578/chapters/chapter_03-data.js?v=1.3.1"></script>
-    <script src="js/codes/API578/chapters/chapter_04-data.js?v=1.3.1"></script>
-    <script src="js/codes/API578/chapters/chapter_05-data.js?v=1.3.1"></script>
-    <script src="js/codes/API578/chapters/chapter_06-data.js?v=1.3.1"></script>
-    <script src="js/codes/API578/chapters/chapter_07-data.js?v=1.3.1"></script>
-    <script src="js/codes/API578/chapters/chapter_08-data.js?v=1.3.1"></script>
-    <script src="js/codes/API578/chapters/chapter_09-data.js?v=1.3.1"></script>
-    <script src="js/codes/API578/chapters/annex-A.js?v=1.3.1"></script>
+    <script src="js/codes/API578/chapters/chapter_01-data.js?v=1.3.4"></script>
+    <script src="js/codes/API578/chapters/chapter_02-data.js?v=1.3.4"></script>
+    <script src="js/codes/API578/chapters/chapter_03-data.js?v=1.3.4"></script>
+    <script src="js/codes/API578/chapters/chapter_04-data.js?v=1.3.4"></script>
+    <script src="js/codes/API578/chapters/chapter_05-data.js?v=1.3.4"></script>
+    <script src="js/codes/API578/chapters/chapter_06-data.js?v=1.3.4"></script>
+    <script src="js/codes/API578/chapters/chapter_07-data.js?v=1.3.4"></script>
+    <script src="js/codes/API578/chapters/chapter_08-data.js?v=1.3.4"></script>
+    <script src="js/codes/API578/chapters/chapter_09-data.js?v=1.3.4"></script>
+    <script src="js/codes/API578/chapters/annex-A.js?v=1.3.4"></script>
     <!-- ... más capítulos de API 578 -->
 
     <!-- Para ASME V -->
-    <script src="js/codes/ASMEV/chapters/chapter_01-data.js?v=1.3.1"></script>
-    <script src="js/codes/ASMEV/chapters/chapter_02-data.js?v=1.3.1"></script>
-    <script src="js/codes/ASMEV/chapters/chapter_06-data.js?v=1.3.1"></script>
-    <script src="js/codes/ASMEV/chapters/chapter_07-data.js?v=1.3.1"></script>
-    <script src="js/codes/ASMEV/chapters/chapter_09-data.js?v=1.3.1"></script>
-    <script src="js/codes/ASMEV/chapters/chapter_10-data.js?v=1.3.1"></script>
-    <script src="js/codes/ASMEV/chapters/chapter_23-data.js?v=1.3.1"></script>
+    <script src="js/codes/ASMEV/chapters/chapter_01-data.js?v=1.3.4"></script>
+    <script src="js/codes/ASMEV/chapters/chapter_02-data.js?v=1.3.4"></script>
+    <script src="js/codes/ASMEV/chapters/chapter_06-data.js?v=1.3.4"></script>
+    <script src="js/codes/ASMEV/chapters/chapter_07-data.js?v=1.3.4"></script>
+    <script src="js/codes/ASMEV/chapters/chapter_09-data.js?v=1.3.4"></script>
+    <script src="js/codes/ASMEV/chapters/chapter_10-data.js?v=1.3.4"></script>
+    <script src="js/codes/ASMEV/chapters/chapter_23-data.js?v=1.3.4"></script>
     <!-- ... más capítulos de ASME V -->
+
+     <!-- Para ASME PCC-2 -->
+    <script src="js/codes/ASMEPCC2/chapters/chapter_01-data.js?v=1.3.4"></script>
+    <!-- ... más capítulos de PCC-2 -->
     
     <!-- Finalmente cargar la lógica de la aplicación -->
-    <script src="js/app.js?v=1.3.1"></script>
+    <script src="js/app.js?v=1.3.4"></script>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const readAloudButton = document.getElementById('btn-read-aloud');
+    const chapterContent = document.getElementById('chapter-content');
+    let isReading = false;
+    let utterance = null;
+    let synth = window.speechSynthesis;
+
+    // Función para detener la lectura actual
+    function stopReading() {
+        if (utterance) {
+            synth.cancel();
+            isReading = false;
+            readAloudButton.innerHTML = '<i class="fas fa-volume-up"></i> Leer en voz alta';
+        }
+    }
+
+    // Función para iniciar la lectura
+    function startReading() {
+        if (synth.speaking) {
+            stopReading();
+            return;
+        }
+
+        if (chapterContent.textContent.trim() === '') {
+            alert('No hay contenido para leer.');
+            return;
+        }
+
+        utterance = new SpeechSynthesisUtterance(chapterContent.textContent);
+
+        // Obtener voces disponibles
+        let voices = synth.getVoices();
+
+        // Filtrar por idioma y preferencia (ej. voz femenina en español)
+        let selectedVoice = voices.find(voice => 
+            voice.lang.includes('es') && voice.name.includes('Helena') // Windows
+        ) || voices.find(voice => 
+            voice.lang.includes('es')
+        ) || voices.find(voice => 
+            voice.lang.includes('en') && voice.name.includes('Samantha') // Mac
+        ) || voices.find(voice => 
+            voice.lang.includes('en')
+        );
+
+        if (selectedVoice) {
+            utterance.voice = selectedVoice;
+        }
+
+        // Configurar idioma si no se encontró voz específica
+        const activeLangButton = document.querySelector('.language-selector button.active');
+        if (activeLangButton.id === 'btn-es') {
+            utterance.lang = 'es-ES';
+        } else {
+            utterance.lang = 'en-US';
+        }
+
+        utterance.rate = 1;
+        utterance.pitch = 1;
+        utterance.volume = 1;
+
+        utterance.onend = function() {
+            isReading = false;
+            readAloudButton.innerHTML = '<i class="fas fa-volume-up"></i> Leer en voz alta';
+        };
+
+        synth.speak(utterance);
+        isReading = true;
+        readAloudButton.innerHTML = '<i class="fas fa-stop"></i> Detener lectura';
+    }
+
+    readAloudButton.addEventListener('click', function() {
+        if (isReading) {
+            stopReading();
+        } else {
+            startReading();
+        }
+    });
+
+    // Detener la lectura si el usuario navega a otro capítulo
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('#chapter-list a')) {
+            stopReading();
+        }
+    });
+});
+</script>
 </body>
 </html>
