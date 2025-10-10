@@ -434,8 +434,20 @@ async function openExam(codeName, chapterId) {
         }
     } else if (codeName === 'ASMEPCC2') {
         switch(chapterId) {
+            case "101": examType = 'asmepcc2_cap101'; break;
             case "201": examType = 'asmepcc2_cap201'; break;
-            default: examType = 'asmepcc2_cap201';
+            case "206": examType = 'asmepcc2_cap206'; break;
+            case "209": examType = 'asmepcc2_cap209'; break;
+            case "210": examType = 'asmepcc2_cap210'; break;
+            case "211": examType = 'asmepcc2_cap211'; break;
+            case "212": examType = 'asmepcc2_cap212'; break;
+            case "304": examType = 'asmepcc2_cap304'; break;
+            case "305": examType = 'asmepcc2_cap305'; break;
+            case "306": examType = 'asmepcc2_cap306'; break;
+            case "501": examType = 'asmepcc2_cap501'; break;
+            case "502": examType = 'asmepcc2_cap502'; break;
+
+            default: examType = 'asmepcc2_cap101';
         }
     }
     
@@ -1067,4 +1079,5 @@ function setupLanguageButtons() {
         btnEn.classList.remove('active');
         updateContent();
     });
+
 }
