@@ -392,21 +392,21 @@ async function openExam(codeName, chapterId) {
     } else if (codeName === 'API571') {
         switch(chapterId) {
             case "2": examType = 'api571_cap02'; break;
-            case "3-3": examType = 'api571_cap3-3'; break;
-            case "3-8": examType = 'api571_cap3-8'; break;
-            case "3-9": examType = 'api571_cap3-9'; break;
-            case "3-14": examType = 'api571_cap3-14'; break;
-            case "3-15": examType = 'api571_cap3-15'; break;
-            case "3-17": examType = 'api571_cap3-17'; break;
-            case "3-22": examType = 'api571_cap3-22'; break;
-            case "3-27": examType = 'api571_cap3-27'; break;
-            case "3-31": examType = 'api571_cap3-31'; break;
-            case "3-37": examType = 'api571_cap3-37'; break;
-            case "3-43": examType = 'api571_cap3-43'; break;
-            case "3-45": examType = 'api571_cap3-45'; break;
-            case "3-57": examType = 'api571_cap3-57'; break;
-            case "3-58": examType = 'api571_cap3-58'; break;
-            case "3-61": examType = 'api571_cap3-61'; break;
+            case "3.3": examType = 'api571_cap3-3'; break;
+            case "3.8": examType = 'api571_cap3-8'; break;
+            case "3.9": examType = 'api571_cap3-9'; break;
+            case "3.14": examType = 'api571_cap3-14'; break;
+            case "3.15": examType = 'api571_cap3-15'; break;
+            case "3.17": examType = 'api571_cap3-17'; break;
+            case "3.22": examType = 'api571_cap3-22'; break;
+            case "3.27": examType = 'api571_cap3-27'; break;
+            case "3.31": examType = 'api571_cap3-31'; break;
+            case "3.37": examType = 'api571_cap3-37'; break;
+            case "3.43": examType = 'api571_cap3-43'; break;
+            case "3.45": examType = 'api571_cap3-45'; break;
+            case "3 57": examType = 'api571_cap3-57'; break;
+            case "3.58": examType = 'api571_cap3-58'; break;
+            case "3.61": examType = 'api571_cap3-61'; break;
             case "A": examType = 'api571_annexA'; break;
             case "B": examType = 'api571_annexB'; break;
             default: examType = 'api571_cap02'; // Capítulo por defecto
@@ -1441,4 +1441,5 @@ document.addEventListener("keydown", function(event) {
   if (event.key === "Escape") {
     closeModal();
   }
+
 });
