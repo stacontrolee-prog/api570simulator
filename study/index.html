@@ -10,7 +10,7 @@
     <meta name="Description" content="API 570 Piping Inspector Certification">
     <meta name="Author" content="Alejandro Plaza">
     <title>API 570 Piping Inspector Certification (2025)</title>
-    <link rel="stylesheet" href="css/styles.css?v=1.4.25">
+    <link rel="stylesheet" href="css/styles.css?v=1.5.2">
     <!-- Agregar iconos de Font Awesome para el botón de menú -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -149,6 +149,18 @@
             <div id="exam-container"></div>
         </main>
     </div>
+    <!-- Modal para maximizar imagen -->
+    <div id="imageModal" class="modal">
+      <span class="close">&times;</span>
+      <div class="zoom-container">
+        <img class="modal-content" id="modalImage">
+      </div>
+      <div class="zoom-controls">
+        <button id="zoomIn" title="Acercar">+</button>
+        <button id="zoomOut" title="Alejar">-</button>
+        <button id="zoomReset" title="Restablecer">100%</button>
+      </div>
+    </div>
     <!-- Botón para volver al principio de la página -->
     <button id="scroll-to-top" title="Volver al principio">
         <i class="fas fa-arrow-up"></i>
@@ -163,130 +175,130 @@
     </footer>
 
     <!-- Cargar primero el gestor de códigos -->
-    <script src="js/codes-manager.js?v=1.4.25"></script>
+    <script src="js/codes-manager.js?v=1.5.2"></script>
     
     <!-- Cargar los datos de cada código -->
-    <script src="js/codes/API570-data.js?v=1.4.25"></script>
-    <script src="js/codes/API574-data.js?v=1.4.25"></script>
-    <script src="js/codes/API576-data.js?v=1.4.25"></script>
-    <script src="js/codes/API577-data.js?v=1.4.25"></script>
-    <script src="js/codes/API578-data.js?v=1.4.25"></script>
+    <script src="js/codes/API570-data.js?v=1.5.2"></script>
+    <script src="js/codes/API574-data.js?v=1.5.2"></script>
+    <script src="js/codes/API576-data.js?v=1.5.2"></script>
+    <script src="js/codes/API577-data.js?v=1.5.2"></script>
+    <script src="js/codes/API578-data.js?v=1.5.2"></script>
     
     <!-- Cargar los capítulos de cada código -->
     <!-- Para API 570 -->
-    <script src="js/codes/API570/chapters/chapter_01-data.js?v=1.4.25"></script>
-    <script src="js/codes/API570/chapters/chapter_02-data.js?v=1.4.25"></script>
-    <script src="js/codes/API570/chapters/chapter_03-data.js?v=1.4.25"></script>
-    <script src="js/codes/API570/chapters/chapter_04-data.js?v=1.4.25"></script>
-    <script src="js/codes/API570/chapters/chapter_05-data.js?v=1.4.25"></script>
-    <script src="js/codes/API570/chapters/chapter_06-data.js?v=1.4.25"></script>
-    <script src="js/codes/API570/chapters/chapter_07-data.js?v=1.4.25"></script>
-    <script src="js/codes/API570/chapters/chapter_08-data.js?v=1.4.25"></script>
-    <script src="js/codes/API570/chapters/chapter_09-data.js?v=1.4.25"></script>
-    <script src="js/codes/API570/chapters/annex-A.js?v=1.4.25"></script>
-    <script src="js/codes/API570/chapters/annex-B.js?v=1.4.25"></script>
+    <script src="js/codes/API570/chapters/chapter_01-data.js?v=1.5.2"></script>
+    <script src="js/codes/API570/chapters/chapter_02-data.js?v=1.5.2"></script>
+    <script src="js/codes/API570/chapters/chapter_03-data.js?v=1.5.2"></script>
+    <script src="js/codes/API570/chapters/chapter_04-data.js?v=1.5.2"></script>
+    <script src="js/codes/API570/chapters/chapter_05-data.js?v=1.5.2"></script>
+    <script src="js/codes/API570/chapters/chapter_06-data.js?v=1.5.2"></script>
+    <script src="js/codes/API570/chapters/chapter_07-data.js?v=1.5.2"></script>
+    <script src="js/codes/API570/chapters/chapter_08-data.js?v=1.5.2"></script>
+    <script src="js/codes/API570/chapters/chapter_09-data.js?v=1.5.2"></script>
+    <script src="js/codes/API570/chapters/annex-A.js?v=1.5.2"></script>
+    <script src="js/codes/API570/chapters/annex-B.js?v=1.5.2"></script>
     <!-- ... más capítulos de API 570 -->
 
     <!-- Para API 571 -->
-    <script src="js/codes/API571/chapters/chapter_02-data.js?v=1.4.25"></script>
-    <script src="js/codes/API571/chapters/chapter_3-3-data.js?v=1.4.25"></script>
-    <script src="js/codes/API571/chapters/chapter_3-8-data.js?v=1.4.25"></script>
-    <script src="js/codes/API571/chapters/chapter_3-9-data.js?v=1.4.25"></script>
-    <script src="js/codes/API571/chapters/chapter_3-14-data.js?v=1.4.25"></script>
-    <script src="js/codes/API571/chapters/chapter_3-15-data.js?v=1.4.25"></script>
-    <script src="js/codes/API571/chapters/chapter_3-17-data.js?v=1.4.25"></script>
-    <script src="js/codes/API571/chapters/chapter_3-22-data.js?v=1.4.25"></script>
-    <script src="js/codes/API571/chapters/chapter_3-27-data.js?v=1.4.25"></script>
-    <script src="js/codes/API571/chapters/chapter_3-31-data.js?v=1.4.25"></script>
-    <script src="js/codes/API571/chapters/chapter_3-37-data.js?v=1.4.25"></script>
-    <script src="js/codes/API571/chapters/chapter_3-43-data.js?v=1.4.25"></script>
-    <script src="js/codes/API571/chapters/chapter_3-45-data.js?v=1.4.25"></script>
-    <script src="js/codes/API571/chapters/chapter_3-57-data.js?v=1.4.25"></script>
-    <script src="js/codes/API571/chapters/chapter_3-58-data.js?v=1.4.25"></script>
-    <script src="js/codes/API571/chapters/chapter_3-61-data.js?v=1.4.25"></script>
-    <script src="js/codes/API571/chapters/annex-A.js?v=1.4.25"></script>
-    <script src="js/codes/API571/chapters/annex-B.js?v=1.4.25"></script>
+    <script src="js/codes/API571/chapters/chapter_02-data.js?v=1.5.2"></script>
+    <script src="js/codes/API571/chapters/chapter_3-3-data.js?v=1.5.2"></script>
+    <script src="js/codes/API571/chapters/chapter_3-8-data.js?v=1.5.2"></script>
+    <script src="js/codes/API571/chapters/chapter_3-9-data.js?v=1.5.2"></script>
+    <script src="js/codes/API571/chapters/chapter_3-14-data.js?v=1.5.2"></script>
+    <script src="js/codes/API571/chapters/chapter_3-15-data.js?v=1.5.2"></script>
+    <script src="js/codes/API571/chapters/chapter_3-17-data.js?v=1.5.2"></script>
+    <script src="js/codes/API571/chapters/chapter_3-22-data.js?v=1.5.2"></script>
+    <script src="js/codes/API571/chapters/chapter_3-27-data.js?v=1.5.2"></script>
+    <script src="js/codes/API571/chapters/chapter_3-31-data.js?v=1.5.2"></script>
+    <script src="js/codes/API571/chapters/chapter_3-37-data.js?v=1.5.2"></script>
+    <script src="js/codes/API571/chapters/chapter_3-43-data.js?v=1.5.2"></script>
+    <script src="js/codes/API571/chapters/chapter_3-45-data.js?v=1.5.2"></script>
+    <script src="js/codes/API571/chapters/chapter_3-57-data.js?v=1.5.2"></script>
+    <script src="js/codes/API571/chapters/chapter_3-58-data.js?v=1.5.2"></script>
+    <script src="js/codes/API571/chapters/chapter_3-61-data.js?v=1.5.2"></script>
+    <script src="js/codes/API571/chapters/annex-A.js?v=1.5.2"></script>
+    <script src="js/codes/API571/chapters/annex-B.js?v=1.5.2"></script>
     <!-- ... más capítulos de API 571 -->
     
     <!-- Para API 574 -->
-    <script src="js/codes/API574/chapters/chapter_01-data.js?v=1.4.25"></script>
-    <script src="js/codes/API574/chapters/chapter_02-data.js?v=1.4.25"></script>
-    <script src="js/codes/API574/chapters/chapter_03-data.js?v=1.4.25"></script>
-    <script src="js/codes/API574/chapters/chapter_04-data.js?v=1.4.25"></script>
-    <script src="js/codes/API574/chapters/chapter_05-data.js?v=1.4.25"></script>
-    <script src="js/codes/API574/chapters/chapter_06-data.js?v=1.4.25"></script>
-    <script src="js/codes/API574/chapters/chapter_07-data.js?v=1.4.25"></script>
-    <script src="js/codes/API574/chapters/chapter_08-data.js?v=1.4.25"></script>
-    <script src="js/codes/API574/chapters/chapter_09-data.js?v=1.4.25"></script>
-    <script src="js/codes/API574/chapters/chapter_10-data.js?v=1.4.25"></script>
-    <script src="js/codes/API574/chapters/chapter_11-data.js?v=1.4.25"></script>
-    <script src="js/codes/API574/chapters/chapter_12-data.js?v=1.4.25"></script>
-    <script src="js/codes/API574/chapters/chapter_13-data.js?v=1.4.25"></script>
-    <script src="js/codes/API574/chapters/chapter_14-data.js?v=1.4.25"></script>
+    <script src="js/codes/API574/chapters/chapter_01-data.js?v=1.5.2"></script>
+    <script src="js/codes/API574/chapters/chapter_02-data.js?v=1.5.2"></script>
+    <script src="js/codes/API574/chapters/chapter_03-data.js?v=1.5.2"></script>
+    <script src="js/codes/API574/chapters/chapter_04-data.js?v=1.5.2"></script>
+    <script src="js/codes/API574/chapters/chapter_05-data.js?v=1.5.2"></script>
+    <script src="js/codes/API574/chapters/chapter_06-data.js?v=1.5.2"></script>
+    <script src="js/codes/API574/chapters/chapter_07-data.js?v=1.5.2"></script>
+    <script src="js/codes/API574/chapters/chapter_08-data.js?v=1.5.2"></script>
+    <script src="js/codes/API574/chapters/chapter_09-data.js?v=1.5.2"></script>
+    <script src="js/codes/API574/chapters/chapter_10-data.js?v=1.5.2"></script>
+    <script src="js/codes/API574/chapters/chapter_11-data.js?v=1.5.2"></script>
+    <script src="js/codes/API574/chapters/chapter_12-data.js?v=1.5.2"></script>
+    <script src="js/codes/API574/chapters/chapter_13-data.js?v=1.5.2"></script>
+    <script src="js/codes/API574/chapters/chapter_14-data.js?v=1.5.2"></script>
     <!-- ... más capítulos de API 574 -->
 
     <!-- Para API 576 -->
-    <script src="js/codes/API576/chapters/chapter_05-data.js?v=1.4.25"></script>
-    <script src="js/codes/API576/chapters/chapter_06-data.js?v=1.4.25"></script>
-    <script src="js/codes/API576/chapters/chapter_08-data.js?v=1.4.25"></script>
-    <script src="js/codes/API576/chapters/chapter_10-data.js?v=1.4.25"></script>
-    <script src="js/codes/API576/chapters/annex-B.js?v=1.4.25"></script>
+    <script src="js/codes/API576/chapters/chapter_05-data.js?v=1.5.2"></script>
+    <script src="js/codes/API576/chapters/chapter_06-data.js?v=1.5.2"></script>
+    <script src="js/codes/API576/chapters/chapter_08-data.js?v=1.5.2"></script>
+    <script src="js/codes/API576/chapters/chapter_10-data.js?v=1.5.2"></script>
+    <script src="js/codes/API576/chapters/annex-B.js?v=1.5.2"></script>
     <!-- ... más capítulos de API 576 -->
 
     <!-- Para API 577 -->
-    <script src="js/codes/API577/chapters/chapter_01-data.js?v=1.4.25"></script>
-    <script src="js/codes/API577/chapters/chapter_02-data.js?v=1.4.25"></script>
-    <script src="js/codes/API577/chapters/chapter_03-data.js?v=1.4.25"></script>
-    <script src="js/codes/API577/chapters/chapter_04-data.js?v=1.4.25"></script>
-    <script src="js/codes/API577/chapters/chapter_05-data.js?v=1.4.25"></script>
-    <script src="js/codes/API577/chapters/chapter_06-data.js?v=1.4.25"></script>
-    <script src="js/codes/API577/chapters/chapter_07-data.js?v=1.4.25"></script>
-    <script src="js/codes/API577/chapters/chapter_08-data.js?v=1.4.25"></script>
-    <script src="js/codes/API577/chapters/chapter_09-data.js?v=1.4.25"></script>
-    <script src="js/codes/API577/chapters/chapter_10-data.js?v=1.4.25"></script>
-    <script src="js/codes/API577/chapters/chapter_11-data.js?v=1.4.25"></script>
+    <script src="js/codes/API577/chapters/chapter_01-data.js?v=1.5.2"></script>
+    <script src="js/codes/API577/chapters/chapter_02-data.js?v=1.5.2"></script>
+    <script src="js/codes/API577/chapters/chapter_03-data.js?v=1.5.2"></script>
+    <script src="js/codes/API577/chapters/chapter_04-data.js?v=1.5.2"></script>
+    <script src="js/codes/API577/chapters/chapter_05-data.js?v=1.5.2"></script>
+    <script src="js/codes/API577/chapters/chapter_06-data.js?v=1.5.2"></script>
+    <script src="js/codes/API577/chapters/chapter_07-data.js?v=1.5.2"></script>
+    <script src="js/codes/API577/chapters/chapter_08-data.js?v=1.5.2"></script>
+    <script src="js/codes/API577/chapters/chapter_09-data.js?v=1.5.2"></script>
+    <script src="js/codes/API577/chapters/chapter_10-data.js?v=1.5.2"></script>
+    <script src="js/codes/API577/chapters/chapter_11-data.js?v=1.5.2"></script>
     <!-- ... más capítulos de API 577 -->
 
     <!-- Para API 578 -->
-    <script src="js/codes/API578/chapters/chapter_01-data.js?v=1.4.25"></script>
-    <script src="js/codes/API578/chapters/chapter_02-data.js?v=1.4.25"></script>
-    <script src="js/codes/API578/chapters/chapter_03-data.js?v=1.4.25"></script>
-    <script src="js/codes/API578/chapters/chapter_04-data.js?v=1.4.25"></script>
-    <script src="js/codes/API578/chapters/chapter_05-data.js?v=1.4.25"></script>
-    <script src="js/codes/API578/chapters/chapter_06-data.js?v=1.4.25"></script>
-    <script src="js/codes/API578/chapters/chapter_07-data.js?v=1.4.25"></script>
-    <script src="js/codes/API578/chapters/chapter_08-data.js?v=1.4.25"></script>
-    <script src="js/codes/API578/chapters/chapter_09-data.js?v=1.4.25"></script>
-    <script src="js/codes/API578/chapters/annex-A.js?v=1.4.25"></script>
+    <script src="js/codes/API578/chapters/chapter_01-data.js?v=1.5.2"></script>
+    <script src="js/codes/API578/chapters/chapter_02-data.js?v=1.5.2"></script>
+    <script src="js/codes/API578/chapters/chapter_03-data.js?v=1.5.2"></script>
+    <script src="js/codes/API578/chapters/chapter_04-data.js?v=1.5.2"></script>
+    <script src="js/codes/API578/chapters/chapter_05-data.js?v=1.5.2"></script>
+    <script src="js/codes/API578/chapters/chapter_06-data.js?v=1.5.2"></script>
+    <script src="js/codes/API578/chapters/chapter_07-data.js?v=1.5.2"></script>
+    <script src="js/codes/API578/chapters/chapter_08-data.js?v=1.5.2"></script>
+    <script src="js/codes/API578/chapters/chapter_09-data.js?v=1.5.2"></script>
+    <script src="js/codes/API578/chapters/annex-A.js?v=1.5.2"></script>
     <!-- ... más capítulos de API 578 -->
 
     <!-- Para ASME V -->
-    <script src="js/codes/ASMEV/chapters/chapter_01-data.js?v=1.4.25"></script>
-    <script src="js/codes/ASMEV/chapters/chapter_02-data.js?v=1.4.25"></script>
-    <script src="js/codes/ASMEV/chapters/chapter_06-data.js?v=1.4.25"></script>
-    <script src="js/codes/ASMEV/chapters/chapter_07-data.js?v=1.4.25"></script>
-    <script src="js/codes/ASMEV/chapters/chapter_09-data.js?v=1.4.25"></script>
-    <script src="js/codes/ASMEV/chapters/chapter_10-data.js?v=1.4.25"></script>
-    <script src="js/codes/ASMEV/chapters/chapter_23-data.js?v=1.4.25"></script>
+    <script src="js/codes/ASMEV/chapters/chapter_01-data.js?v=1.5.2"></script>
+    <script src="js/codes/ASMEV/chapters/chapter_02-data.js?v=1.5.2"></script>
+    <script src="js/codes/ASMEV/chapters/chapter_06-data.js?v=1.5.2"></script>
+    <script src="js/codes/ASMEV/chapters/chapter_07-data.js?v=1.5.2"></script>
+    <script src="js/codes/ASMEV/chapters/chapter_09-data.js?v=1.5.2"></script>
+    <script src="js/codes/ASMEV/chapters/chapter_10-data.js?v=1.5.2"></script>
+    <script src="js/codes/ASMEV/chapters/chapter_23-data.js?v=1.5.2"></script>
     <!-- ... más capítulos de ASME V -->
 
     <!-- Para ASME PCC-2 -->
-    <script src="js/codes/ASMEPCC2/chapters/chapter_01-data.js?v=1.4.25"></script>
-    <script src="js/codes/ASMEPCC2/chapters/chapter_02-data.js?v=1.4.25"></script>
-    <script src="js/codes/ASMEPCC2/chapters/chapter_03-data.js?v=1.4.25"></script>
-    <script src="js/codes/ASMEPCC2/chapters/chapter_04-data.js?v=1.4.25"></script>
-    <script src="js/codes/ASMEPCC2/chapters/chapter_05-data.js?v=1.4.25"></script>
-    <script src="js/codes/ASMEPCC2/chapters/chapter_06-data.js?v=1.4.25"></script>
-    <script src="js/codes/ASMEPCC2/chapters/chapter_07-data.js?v=1.4.25"></script>
-    <script src="js/codes/ASMEPCC2/chapters/chapter_08-data.js?v=1.4.25"></script>
-    <script src="js/codes/ASMEPCC2/chapters/chapter_09-data.js?v=1.4.25"></script>
-    <script src="js/codes/ASMEPCC2/chapters/chapter_10-data.js?v=1.4.25"></script>
-    <script src="js/codes/ASMEPCC2/chapters/chapter_11-data.js?v=1.4.25"></script>
-    <script src="js/codes/ASMEPCC2/chapters/chapter_12-data.js?v=1.4.25"></script>
+    <script src="js/codes/ASMEPCC2/chapters/chapter_01-data.js?v=1.5.2"></script>
+    <script src="js/codes/ASMEPCC2/chapters/chapter_02-data.js?v=1.5.2"></script>
+    <script src="js/codes/ASMEPCC2/chapters/chapter_03-data.js?v=1.5.2"></script>
+    <script src="js/codes/ASMEPCC2/chapters/chapter_04-data.js?v=1.5.2"></script>
+    <script src="js/codes/ASMEPCC2/chapters/chapter_05-data.js?v=1.5.2"></script>
+    <script src="js/codes/ASMEPCC2/chapters/chapter_06-data.js?v=1.5.2"></script>
+    <script src="js/codes/ASMEPCC2/chapters/chapter_07-data.js?v=1.5.2"></script>
+    <script src="js/codes/ASMEPCC2/chapters/chapter_08-data.js?v=1.5.2"></script>
+    <script src="js/codes/ASMEPCC2/chapters/chapter_09-data.js?v=1.5.2"></script>
+    <script src="js/codes/ASMEPCC2/chapters/chapter_10-data.js?v=1.5.2"></script>
+    <script src="js/codes/ASMEPCC2/chapters/chapter_11-data.js?v=1.5.2"></script>
+    <script src="js/codes/ASMEPCC2/chapters/chapter_12-data.js?v=1.5.2"></script>
     <!-- ... más capítulos de PCC-2 -->
     
     <!-- Finalmente cargar la lógica de la aplicación -->
-    <script src="js/app.js?v=1.4.25"></script>
+    <script src="js/app.js?v=1.5.2"></script>
 
 </body>
 
