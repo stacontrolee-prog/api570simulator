@@ -1103,7 +1103,7 @@ function setupScrollToTopButton() {
     });
 }
 
-// Protecciones
+// BEGIN PROTECT
 (function() {
         'use strict';
         
@@ -1224,7 +1224,7 @@ function setupScrollToTopButton() {
         console.log('%cEsta página está protegida contra copia.', 'color: blue; font-size: 20px;');
         console.log('%cSi eres el propietario, por favor contacta al administrador.', 'color: green; font-size: 16px;');
     })();
-
+// END PROTECT
 
 document.addEventListener('DOMContentLoaded', function() {
     const readAloudButton = document.getElementById('btn-read-aloud');
@@ -1312,3 +1312,133 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Obtener elementos del DOM
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImage");
+const closeBtn = document.getElementsByClassName("close")[0];
+const zoomInBtn = document.getElementById("zoomIn");
+const zoomOutBtn = document.getElementById("zoomOut");
+const zoomResetBtn = document.getElementById("zoomReset");
+
+// Variables para el zoom
+let currentZoom = 1;
+const minZoom = 0.5;
+const maxZoom = 4;
+const zoomStep = 0.2;
+
+// Variables para el arrastre
+let isDragging = false;
+let startX, startY, scrollLeft, scrollTop;
+
+// Función para abrir modal
+function openModal(img) {
+  modal.style.display = "block";
+  modalImg.src = img.src;
+  resetZoom();
+}
+
+// Función para cerrar modal
+function closeModal() {
+  modal.style.display = "none";
+  resetZoom();
+}
+
+// Restablecer zoom
+function resetZoom() {
+  currentZoom = 1;
+  updateZoom();
+  modalImg.style.transform = `scale(${currentZoom})`;
+  modalImg.style.left = '0';
+  modalImg.style.top = '0';
+}
+
+// Actualizar zoom
+function updateZoom() {
+  modalImg.style.transform = `scale(${currentZoom})`;
+  zoomResetBtn.textContent = Math.round(currentZoom * 100) + '%';
+}
+
+// Funciones de zoom
+function zoomIn() {
+  if (currentZoom < maxZoom) {
+    currentZoom += zoomStep;
+    updateZoom();
+  }
+}
+
+function zoomOut() {
+  if (currentZoom > minZoom) {
+    currentZoom -= zoomStep;
+    updateZoom();
+  }
+}
+
+// Eventos de zoom
+zoomInBtn.addEventListener("click", zoomIn);
+zoomOutBtn.addEventListener("click", zoomOut);
+zoomResetBtn.addEventListener("click", resetZoom);
+
+// Zoom con rueda del mouse
+modalImg.addEventListener('wheel', (e) => {
+  e.preventDefault();
+  if (e.deltaY < 0) {
+    zoomIn();
+  } else {
+    zoomOut();
+  }
+});
+
+// Funcionalidad de arrastre
+modalImg.addEventListener('mousedown', (e) => {
+  if (currentZoom > 1) {
+    isDragging = true;
+    startX = e.pageX - modalImg.offsetLeft;
+    startY = e.pageY - modalImg.offsetTop;
+    modalImg.style.cursor = 'grabbing';
+  }
+});
+
+modalImg.addEventListener('mouseleave', () => {
+  isDragging = false;
+  modalImg.style.cursor = 'grab';
+});
+
+modalImg.addEventListener('mouseup', () => {
+  isDragging = false;
+  modalImg.style.cursor = 'grab';
+});
+
+modalImg.addEventListener('mousemove', (e) => {
+  if (!isDragging || currentZoom <= 1) return;
+  e.preventDefault();
+  const x = e.pageX - modalImg.offsetLeft;
+  const y = e.pageY - modalImg.offsetTop;
+  const walkX = (x - startX) * 1; // Velocidad de arrastre horizontal
+  const walkY = (y - startY) * 1; // Velocidad de arrastre vertical
+  modalImg.style.left = `${walkX}px`;
+  modalImg.style.top = `${walkY}px`;
+});
+
+// Delegación de eventos para imágenes existentes y futuras
+document.addEventListener('click', function(event) {
+  if (event.target.classList.contains('figure-image')) {
+    openModal(event.target);
+  }
+});
+
+// Eventos para cerrar el modal
+closeBtn.addEventListener("click", closeModal);
+
+// Cerrar al hacer clic fuera de la imagen
+modal.addEventListener("click", function(event) {
+  if (event.target === modal || event.target.classList.contains('zoom-container')) {
+    closeModal();
+  }
+});
+
+// Cerrar con tecla ESC
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    closeModal();
+  }
+});
