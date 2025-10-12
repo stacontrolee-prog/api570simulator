@@ -3,243 +3,483 @@ export default {
     questions: [
         {
             id: 1,
-            text: "According to API 570, which of the following best defines 'alteration'?",
+            text: "According to API 570, what defines 'abandoned-in-place' piping?",
             options: [
-                "A physical change in any component that affects the pressure-containing capability beyond existing design reports",
-                "Replacement of a component with an identical one",
-                "Addition of small-bore attachments that don't require reinforcement",
-                "Routine maintenance activities"
+                "Piping temporarily out of service but still connected to process",
+                "Piping decommissioned with no future use intention, deinventoried and physically disconnected",
+                "Piping in standby mode with block valves closed",
+                "Piping removed from service but still within process unit boundaries"
             ],
-            correct: 0,
-            reference: "API 570 Section 3.1.3"
+            correct: 1,
+            reference: "API 570 3.1.1"
         },
         {
             id: 2,
-            text: "Which of the following is NOT considered an authorized inspection agency according to API 570?",
+            text: "Which of the following is NOT considered an alloy material per API 570?",
             options: [
-                "The inspection organization of the jurisdiction where the piping is used",
-                "The inspection organization of an insurance company licensed for piping systems",
-                "An independent inspection organization under contract to the owner-operator",
-                "A repair organization performing welding on piping systems"
+                "Chromium-molybdenum steel",
+                "Austenitic stainless steel",
+                "Carbon steel",
+                "Nickel-based alloy"
             ],
-            correct: 3,
-            reference: "API 570 Section 3.1.6"
+            correct: 2,
+            reference: "API 570 3.1.2"
         },
         {
             id: 3,
-            text: "What is a Condition Monitoring Location (CML) according to API 570?",
+            text: "What constitutes an 'alteration' according to API 570?",
             options: [
-                "A location where corrosion inhibitors are injected",
-                "A designated area where periodic examinations are conducted to assess piping condition",
-                "A point where pressure relief devices are installed",
-                "A location where piping supports are inspected"
+                "Replacement with identical components",
+                "Physical change affecting pressure-containing capability beyond existing data reports",
+                "Adding small-bore attachments not requiring reinforcement",
+                "Repair of existing components without design changes"
             ],
             correct: 1,
-            reference: "API 570 Section 3.1.9"
+            reference: "API 570 3.1.3"
         },
         {
             id: 4,
-            text: "According to API 570, what is the definition of 'corrosion allowance'?",
+            text: "Which organization is NOT considered an authorized inspection agency?",
             options: [
-                "The rate of metal loss due to chemical reactions",
-                "The additional material thickness available to allow for metal loss during service life",
-                "The amount of corrosion inhibitor to be injected",
-                "The maximum acceptable corrosion rate"
+                "Owner-operator's internal inspection organization",
+                "Jurisdiction's inspection organization",
+                "Insurance company's inspection organization",
+                "Contractor's quality control department"
             ],
-            correct: 1,
-            reference: "API 570 Section 3.1.12"
+            correct: 3,
+            reference: "API 570 3.1.6"
         },
         {
             id: 5,
-            text: "Which of the following best describes 'deadleg' according to API 570?",
+            text: "What is the definition of 'auxiliary piping'?",
             options: [
-                "Piping that has been abandoned in place",
-                "Components of a piping system that normally have little or no significant flow",
-                "Piping that is temporarily out of service",
-                "Piping that requires special inspection procedures"
+                "Main process flow lines",
+                "Large diameter transfer piping",
+                "Instrument and machinery piping, typically small-bore secondary process piping",
+                "Emergency relief systems"
             ],
-            correct: 1,
-            reference: "API 570 Section 3.1.21"
+            correct: 2,
+            reference: "API 570 3.1.8"
         },
         {
             id: 6,
-            text: "What is the difference between a 'defect' and an 'imperfection' according to API 570?",
+            text: "What does CML stand for in API 570?",
             options: [
-                "A defect is always rejectable, while an imperfection may or may not exceed acceptance criteria",
-                "An imperfection is always rejectable, while a defect may or may not exceed acceptance criteria",
-                "They are synonymous terms",
-                "A defect is only found in welds, while imperfections are found in base metal"
+                "Critical Monitoring Location",
+                "Condition Monitoring Location",
+                "Corrosion Measurement Location",
+                "Component Maintenance Log"
             ],
-            correct: 0,
-            reference: "API 570 Sections 3.1.23, 3.1.40"
+            correct: 1,
+            reference: "API 570 3.1.9"
         },
         {
             id: 7,
-            text: "According to API 570, what is 'Fitness-For-Service evaluation'?",
+            text: "What is a 'contact point'?",
             options: [
-                "A test to determine if piping can withstand design pressure",
-                "An engineering methodology to assess flaws and deterioration to determine structural integrity",
-                "A corrosion monitoring technique",
-                "A procedure to qualify welding procedures"
+                "Location where two pipes join",
+                "Point where instrumentation connects to piping",
+                "Location where pipe rests on supports increasing corrosion susceptibility",
+                "Interface between different materials"
             ],
-            correct: 1,
-            reference: "API 570 Section 3.1.32"
+            correct: 2,
+            reference: "API 570 3.1.11"
         },
         {
             id: 8,
-            text: "Which of the following is considered a 'major repair' according to API 570?",
+            text: "How is 'corrosion allowance' used in design calculations?",
             options: [
-                "Replacement of a small section of piping",
-                "Welding a small patch on a pipe",
-                "Removal and replacement of large sections of piping systems",
-                "Tightening flange bolts"
+                "It is included in strength calculations",
+                "It is not used in design strength calculations",
+                "It replaces safety factors in calculations",
+                "It is only for external corrosion"
             ],
-            correct: 2,
-            reference: "API 570 Section 3.1.58"
+            correct: 1,
+            reference: "API 570 3.1.12"
         },
         {
             id: 9,
-            text: "What is the definition of 'Maximum Allowable Working Pressure' (MAWP) according to API 570?",
+            text: "What does CUI include according to API 570?",
             options: [
-                "The pressure at which a piping system was originally designed",
-                "The maximum gauge pressure permitted for a piping system in its operating position for a designated temperature",
-                "The pressure at which safety relief devices are set",
-                "The maximum pressure achieved during hydrostatic testing"
+                "Only carbon steel corrosion under insulation",
+                "External corrosion and ECSCC of stainless steels under insulation",
+                "Internal corrosion from trapped water",
+                "Corrosion only in coastal environments"
             ],
             correct: 1,
-            reference: "API 570 Section 3.1.61"
+            reference: "API 570 3.1.16"
         },
         {
             id: 10,
-            text: "According to API 570, what is the definition of 'minimum required thickness'?",
+            text: "What are 'critical check valves'?",
             options: [
-                "The thickness without corrosion allowance based on design code calculations",
-                "The thickness including corrosion allowance",
-                "The thickness measured during inspection",
-                "The thickness at which piping must be replaced"
+                "All check valves in process service",
+                "Check valves that need to operate reliably to avoid hazardous events",
+                "Check valves larger than NPS 12",
+                "Check valves in utility service"
             ],
-            correct: 0,
-            reference: "API 570 Section 3.1.64"
+            correct: 1,
+            reference: "API 570 3.1.17"
         },
         {
             id: 11,
-            text: "What is 'Positive Material Identification' (PMI) according to API 570?",
+            text: "What defines 'cyclic service'?",
             options: [
-                "A procedure to verify the quality of materials",
-                "A physical evaluation or test to confirm material consistency with specifications",
-                "A certification process for materials",
-                "A procedure to identify material defects"
+                "Service with constant temperature",
+                "Service conditions that may result in cyclic loading producing fatigue",
+                "Intermittent operation only",
+                "Services with regular maintenance shutdowns"
             ],
             correct: 1,
-            reference: "API 570 Section 3.1.81"
+            reference: "API 570 3.1.18"
         },
         {
             id: 12,
-            text: "Which of the following is considered 'primary process piping' according to API 570?",
+            text: "What is a 'damage mechanism'?",
             options: [
-                "Small-bore piping that can be valved off without affecting unit operability",
-                "Process piping in normal service that cannot be valved off without significantly affecting unit operability",
-                "Utility piping associated with a process unit",
-                "Piping that has been temporarily taken out of service"
+                "Only corrosion processes",
+                "Any type of deterioration affecting equipment integrity",
+                "Mechanical damage only",
+                "Design deficiencies"
             ],
             correct: 1,
-            reference: "API 570 Section 3.1.85"
+            reference: "API 570 3.1.19"
         },
         {
             id: 13,
-            text: "What is the definition of 'rerating' according to API 570?",
+            text: "What characterizes a 'deadleg'?",
             options: [
-                "The process of increasing the pressure rating of a piping system",
-                "A change in either the design temperature rating, design pressure rating, or the MAWP of a piping system",
-                "The process of replacing a piping system with a higher-rated one",
-                "The process of inspecting a piping system after a pressure change"
+                "High velocity sections",
+                "Components with little or no significant flow",
+                "Main process headers",
+                "Recirculation loops"
             ],
             correct: 1,
-            reference: "API 570 Section 3.1.94"
+            reference: "API 570 3.1.21"
         },
         {
             id: 14,
-            text: "What is 'Risk-Based Inspection' (RBI) according to API 570?",
+            text: "What is the difference between a 'flaw' and a 'defect'?",
             options: [
-                "An inspection method focusing only on high-risk piping",
-                "A risk assessment process that considers both probability of failure and consequence of failure",
-                "An inspection method performed only after an incident",
-                "A method to calculate corrosion rates"
+                "They are identical terms",
+                "Flaw is always rejectable, defect may be acceptable",
+                "Defect renders part unable to meet acceptance standards",
+                "Flaw is larger than defect"
             ],
-            correct: 1,
-            reference: "API 570 Section 3.1.95"
+            correct: 2,
+            reference: "API 570 3.1.23"
         },
         {
             id: 15,
-            text: "According to API 570, what is the definition of 'small-bore piping' (SBP)?",
+            text: "What is a 'deferral'?",
             options: [
-                "Pipe or pipe components less than or equal to NPS 1",
-                "Pipe or pipe components less than or equal to NPS 2",
-                "Pipe or pipe components less than or equal to NPS 3",
-                "Pipe or pipe components less than or equal to NPS 4"
+                "Cancellation of inspection requirements",
+                "Approved postponement of inspection or test",
+                "Extension of equipment life",
+                "Reduction in inspection frequency"
             ],
             correct: 1,
-            reference: "API 570 Section 3.1.98"
+            reference: "API 570 3.1.24"
         },
         {
             id: 16,
-            text: "What is 'temporary repair' according to API 570?",
+            text: "How is 'design pressure' defined?",
             options: [
-                "A repair made to restore sufficient integrity until permanent repairs are conducted",
-                "A repair that will last less than one year",
-                "A repair that doesn't require welding",
-                "A repair made during a unit shutdown"
+                "Normal operating pressure",
+                "Pressure at most severe condition of coincident pressure and temperature",
+                "Maximum expected operating pressure",
+                "Set pressure of relief devices"
             ],
-            correct: 0,
-            reference: "API 570 Section 3.1.102"
+            correct: 1,
+            reference: "API 570 3.1.25"
         },
         {
             id: 17,
-            text: "Which of the following is considered 'utility piping' according to API 570?",
+            text: "What is an 'examination point'?",
             options: [
-                "Hydrocarbon piping in a process unit",
-                "Chemical process piping",
-                "Non-process piping such as steam, air, water, nitrogen",
-                "Piping that transports hazardous materials"
+                "Location where visual inspection is performed",
+                "Specific location within a CML",
+                "Point where thickness is maximum",
+                "Location for pressure testing"
             ],
-            correct: 2,
-            reference: "API 570 Section 3.1.104"
+            correct: 1,
+            reference: "API 570 3.1.28"
         },
         {
             id: 18,
-            text: "What does the acronym 'CUI' stand for according to API 570?",
+            text: "What distinguishes an 'examiner' from an 'inspector'?",
             options: [
-                "Corrosion Under Insulation",
-                "Critical Utility Inspection",
-                "Condition Under Inspection",
-                "Corrosion Under Inhibition"
+                "Examiner performs NDE but may not evaluate results per API 570",
+                "Examiner is always more qualified",
+                "Inspector only does visual examination",
+                "Examiner handles all record keeping"
             ],
             correct: 0,
-            reference: "API 570 Section 3.2"
+            reference: "API 570 3.1.30"
         },
         {
             id: 19,
-            text: "What does the acronym 'MAWP' stand for according to API 570?",
+            text: "What is included in 'external inspection'?",
             options: [
-                "Maximum Allowable Working Pressure",
-                "Minimum Allowable Working Pressure",
-                "Maximum Actual Working Pressure",
-                "Minimum Actual Working Pressure"
+                "Only internal corrosion assessment",
+                "Visual inspection from outside to find conditions impacting pressure integrity",
+                "Pressure testing only",
+                "Material verification"
             ],
-            correct: 0,
-            reference: "API 570 Section 3.2"
+            correct: 1,
+            reference: "API 570 3.1.31"
         },
         {
             id: 20,
-            text: "What does the acronym 'PMI' stand for according to API 570?",
+            text: "What is Fitness-For-Service evaluation?",
             options: [
-                "Positive Material Identification",
-                "Preventive Maintenance Inspection",
-                "Pressure Management Interface",
-                "Piping Maintenance Instruction"
+                "Initial design assessment",
+                "Methodology to assess flaws for continued service integrity",
+                "Quality assurance program",
+                "Construction code compliance check"
+            ],
+            correct: 1,
+            reference: "API 570 3.1.32"
+        },
+        {
+            id: 21,
+            text: "Which component is NOT considered a 'fitting'?",
+            options: [
+                "Elbow",
+                "Tee",
+                "Reducer",
+                "Flange"
+            ],
+            correct: 3,
+            reference: "API 570 3.1.33"
+        },
+        {
+            id: 22,
+            text: "What is 'flash point'?",
+            options: [
+                "Temperature where autoignition occurs",
+                "Lowest temperature forming ignitable mixture in air",
+                "Maximum safe operating temperature",
+                "Design temperature for piping"
+            ],
+            correct: 1,
+            reference: "API 570 3.1.35"
+        },
+        {
+            id: 23,
+            text: "What is a 'hold point'?",
+            options: [
+                "Maximum pressure point",
+                "Point beyond which work cannot proceed until required inspection",
+                "Location where pipe is supported",
+                "Point of highest stress"
+            ],
+            correct: 1,
+            reference: "API 570 3.1.38"
+        },
+        {
+            id: 24,
+            text: "What distinguishes 'idle' piping from 'abandoned' piping?",
+            options: [
+                "Idle piping remains connected to pressure vessels or instrumentation",
+                "Idle piping is always drained and purged",
+                "Abandoned piping can be returned to service easily",
+                "There is no difference"
             ],
             correct: 0,
-            reference: "API 570 Section 3.2"
+            reference: "API 570 3.1.39"
+        },
+        {
+            id: 25,
+            text: "What is an 'injection point'?",
+            options: [
+                "Where two process streams join",
+                "Where water, steam or chemicals are introduced into process stream",
+                "Location of sample points",
+                "Point where relief devices discharge"
+            ],
+            correct: 1,
+            reference: "API 570 3.1.43"
+        },
+        {
+            id: 26,
+            text: "When is piping considered 'in-service'?",
+            options: [
+                "Only when actively flowing product",
+                "After installation until decommissioning, including idle periods",
+                "During construction phase",
+                "When pressure tested only"
+            ],
+            correct: 1,
+            reference: "API 570 3.1.44"
+        },
+        {
+            id: 27,
+            text: "What is an IOW?",
+            options: [
+                "Inspection Organization Window",
+                "Integrity Operating Window",
+                "Internal Operating Warning",
+                "Instrument Operation Window"
+            ],
+            correct: 1,
+            reference: "API 570 3.1.50"
+        },
+        {
+            id: 28,
+            text: "What constitutes 'intermittent service'?",
+            options: [
+                "Regular maintenance outages in continuous process",
+                "Operation at regular or irregular intervals rather than continuously",
+                "Seasonal operation only",
+                "Emergency standby systems"
+            ],
+            correct: 1,
+            reference: "API 570 3.1.51"
+        },
+        {
+            id: 29,
+            text: "What is a 'level bridle'?",
+            options: [
+                "Support structure for piping",
+                "Piping assembly associated with level gauge attached to vessel",
+                "Type of pipe hanger",
+                "Instrument calibration device"
+            ],
+            correct: 1,
+            reference: "API 570 3.1.54"
+        },
+        {
+            id: 30,
+            text: "What is LOTO?",
+            options: [
+                "Load Over Time Operation",
+                "Lockout/Tagout safety procedure",
+                "Low Temperature Operation",
+                "Line Testing Operation"
+            ],
+            correct: 1,
+            reference: "API 570 3.1.57"
+        },
+        {
+            id: 31,
+            text: "What defines a 'major repair'?",
+            options: [
+                "Any welding on pressure boundary",
+                "Work that removes and replaces major part of pressure boundary",
+                "Replacement of small valves",
+                "External coating repairs"
+            ],
+            correct: 1,
+            reference: "API 570 3.1.58"
+        },
+        {
+            id: 32,
+            text: "What is MOC?",
+            options: [
+                "Maintenance Operation Control",
+                "Management of Change",
+                "Material Quality Control",
+                "Maximum Operating Condition"
+            ],
+            correct: 1,
+            reference: "API 570 3.1.59"
+        },
+        {
+            id: 33,
+            text: "What does MAWP represent?",
+            options: [
+                "Maximum pressure during upset conditions",
+                "Maximum gauge pressure permitted at designated temperature",
+                "Normal operating pressure",
+                "Test pressure requirement"
+            ],
+            correct: 1,
+            reference: "API 570 3.1.61"
+        },
+        {
+            id: 34,
+            text: "What is 'minimum alert thickness'?",
+            options: [
+                "Minimum required thickness per code",
+                "Thickness providing early warning for future service life management",
+                "Actual measured thickness",
+                "Original nominal thickness"
+            ],
+            correct: 1,
+            reference: "API 570 3.1.62"
+        },
+        {
+            id: 35,
+            text: "What is MDMT/MAT?",
+            options: [
+                "Maximum Design Metal Thickness",
+                "Minimum Design Metal Temperature/Minimum Allowable Temperature",
+                "Mean Diameter Measurement Technique",
+                "Material Designation and Marking Type"
+            ],
+            correct: 1,
+            reference: "API 570 3.1.63"
+        },
+        {
+            id: 36,
+            text: "How is 'minimum required thickness' defined?",
+            options: [
+                "Thickness including corrosion allowance",
+                "Minimum thickness without corrosion allowance for code calculations",
+                "Actual remaining thickness",
+                "Original thickness minus corrosion"
+            ],
+            correct: 1,
+            reference: "API 570 3.1.64"
+        },
+        {
+            id: 37,
+            text: "What is a 'mixing point'?",
+            options: [
+                "Where chemicals are injected",
+                "Where two or more streams meet",
+                "Location of mixers or agitators",
+                "Point where temperature changes"
+            ],
+            correct: 1,
+            reference: "API 570 3.1.65"
+        },
+        {
+            id: 38,
+            text: "What is 'off-site piping'?",
+            options: [
+                "Piping outside company property",
+                "Piping not within process unit plot boundaries",
+                "Underground piping",
+                "Utility piping"
+            ],
+            correct: 1,
+            reference: "API 570 3.1.68"
+        },
+        {
+            id: 39,
+            text: "What is 'on-stream inspection'?",
+            options: [
+                "Internal inspection during shutdown",
+                "Inspection from outside while piping is in-service",
+                "Pressure testing",
+                "Visual inspection only"
+            ],
+            correct: 1,
+            reference: "API 570 3.1.70"
+        },
+        {
+            id: 40,
+            text: "What does PMI stand for?",
+            options: [
+                "Preventive Maintenance Inspection",
+                "Positive Material Identification",
+                "Pressure Measurement Instrument",
+                "Pipe Material Index"
+            ],
+            correct: 1,
+            reference: "API 570 3.1.81"
         }
     ]
-};
+}
