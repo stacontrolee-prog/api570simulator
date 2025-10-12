@@ -6,14 +6,11 @@ let examLoaded = false; // Para saber si un examen está cargado
 
 // Inicializar la página
 document.addEventListener('DOMContentLoaded', () => {
-    //console.log('DOM cargado. Inicializando aplicación...');
-    //console.log('Códigos disponibles:', getCodes());
-    //console.log('Capítulos para API570:', getChaptersByCode('API570'));
-    
     setupCodeSelector();
     setupSidebarToggle();
     renderChapterList();
     setupLanguageButtons();
+    setupScrollToTopButton();
 });
 
 // Configurar el botón para alternar el sidebar en móviles
@@ -49,12 +46,9 @@ function setupCodeSelector() {
     codeSelect.addEventListener('change', (event) => {
         currentCode = event.target.value;
         currentChapter = null; // Reiniciar el capítulo actual
-        // console.log('Código cambiado a:', currentCode);
-
         
-            renderChapterList();
-            updateContent();
-        
+        renderChapterList();
+        updateContent();
     });
 }
 
@@ -65,17 +59,13 @@ function renderChapterList() {
     
     // Obtener los capítulos del código actual
     const chapters = getChaptersByCode(currentCode);
-    //console.log('Renderizando capítulos para', currentCode, ':', chapters);
     
     if (chapters.length === 0) {
         const li = document.createElement('li');
         if (currentCode !== 'select') {
-            li.textContent = 'No hay capítulos disponibles';
-            renderChapterList();
-            updateContent();
-        }else{
-            li.textContent = 'Selecciona un codigo';
-
+            li.textContent = currentLanguage === 'en' ? 'No chapters available' : 'No hay capítulos disponibles';
+        } else {
+            li.textContent = currentLanguage === 'en' ? 'Select a code' : 'Selecciona un código';
         }
         
         chapterList.appendChild(li);
@@ -84,7 +74,8 @@ function renderChapterList() {
     
     chapters.forEach(chapter => {
         const li = document.createElement('li');
-        li.innerHTML = `<span class="chapter-id">${chapter.id}.</span> ${chapter.title}`;
+        const chapterTitle = currentLanguage === 'en' ? chapter.title : chapter.titleEs;
+        li.innerHTML = `<span class="chapter-id">${chapter.id}.</span> ${chapterTitle}`;
         li.addEventListener('click', () => loadChapter(chapter.id));
         chapterList.appendChild(li);
     });
@@ -93,7 +84,6 @@ function renderChapterList() {
 // Cargar contenido del capítulo
 function loadChapter(chapterId) {
     currentChapter = getChapterByCodeAndId(currentCode, chapterId);
-    //console.log('Cargando capítulo:', currentChapter);
     updateContent();
     
     // Actualizar estado visual
@@ -447,11 +437,9 @@ async function openExam(codeName, chapterId) {
             case "501": examType = 'asmepcc2_cap501'; break;
             case "502": examType = 'asmepcc2_cap502'; break;
 
-            default: examType = 'asmepcc2_cap101';
+            default: examType = 'asmepcc2_cap201';
         }
     }
-    
-    //console.log('Tipo de examen determinado:', examType);
     
     // Cargar el examen en el contenedor
     await loadExam(examType);
@@ -469,33 +457,26 @@ async function loadExam(examType) {
     }
     
     try {
-        //console.log('Intentando cargar el examen:', examType);
-        
         let examData;
         
         try {
             // Construir la ruta del archivo del examen
             const examPath = `./exams/${examType}.js`;
-            //console.log('Ruta del examen:', examPath);
             
             // Cargar dinámicamente el archivo del examen
             const examModule = await import(examPath);
-            //console.log('Módulo del examen cargado:', examModule);
             
             if (!examModule || !examModule.default) {
                 throw new Error('El módulo del examen no contiene datos válidos');
             }
             
             examData = examModule.default;
-            //console.log('Datos del examen cargados dinámicamente:', examData);
             
         } catch (importError) {
             console.error('Error al importar el examen:', importError);
-            ////console.log('Usando examen de respaldo para:', examType);
             
             // Usar examen de respaldo según el tipo
             //examData = getFallbackExam(examType);
-            ////console.log('Datos del examen de respaldo:', examData);
         }
         
         // Verificar que los datos del examen sean válidos
@@ -525,7 +506,6 @@ async function loadExam(examType) {
         alert(`Error al cargar el examen: ${error.message}\n\nPor favor, inténtalo de nuevo o contacta al administrador.`);
     }
 }
-
 
 // Función para crear el HTML del examen
 function createExamHTML(examData, examType) {
@@ -1061,23 +1041,274 @@ function backToResults() {
     document.getElementById('result-view').classList.remove('hidden');
 }
 
-// Configurar botones de idioma
+// Configurar botones de idioma con banderas
 function setupLanguageButtons() {
-    const btnEn = document.getElementById('btn-en');
-    const btnEs = document.getElementById('btn-es');
+    const languageToggle = document.getElementById('language-toggle');
     
-    btnEn.addEventListener('click', () => {
-        currentLanguage = 'en';
-        btnEn.classList.add('active');
-        btnEs.classList.remove('active');
-        updateContent();
+    languageToggle.addEventListener('click', () => {
+        // Cambiar al otro idioma
+        if (currentLanguage === 'en') {
+            changeLanguage('es');
+        } else {
+            changeLanguage('en');
+        }
     });
     
-    btnEs.addEventListener('click', () => {
-        currentLanguage = 'es';
-        btnEs.classList.add('active');
-        btnEn.classList.remove('active');
-        updateContent();
+    // Cargar el idioma preferido al iniciar la página
+    const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
+    changeLanguage(savedLanguage);
+}
+
+// Función para cambiar el idioma
+function changeLanguage(lang) {
+    // Actualizar la variable global currentLanguage
+    currentLanguage = lang;
+    
+    // Actualizar la bandera según el idioma
+    const flagIcon = document.getElementById('flag-icon');
+    if (lang === 'en') {
+        flagIcon.src = 'https://flagcdn.com/w40/us.png';
+        flagIcon.alt = 'English';
+    } else {
+        flagIcon.src = 'https://flagcdn.com/w40/es.png';
+        flagIcon.alt = 'Español';
+    }
+    
+    // Actualizar el contenido
+    updateContent();
+    
+    // Guardar la preferencia de idioma en localStorage
+    localStorage.setItem('preferredLanguage', lang);
+}
+
+// Configurar el botón de volver al principio
+function setupScrollToTopButton() {
+    const scrollToTopBtn = document.getElementById('scroll-to-top');
+    
+    // Mostrar/ocultar el botón según el scroll
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.style.display = 'flex';
+        } else {
+            scrollToTopBtn.style.display = 'none';
+        }
+    });
+    
+    // Acción de volver al principio al hacer clic
+    scrollToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// Protecciones
+(function() {
+        'use strict';
+        
+        // 1. Protección contra clic derecho
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        // 2. Protección contra selección de texto
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        // 3. Protección contra arrastrar imágenes
+        document.addEventListener('dragstart', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+                return false;
+            }
+        });
+        
+        // 4. Protección contra teclas específicas
+        document.addEventListener('keydown', function(e) {
+            // F12, Ctrl+U, Ctrl+Shift+I, Ctrl+Shift+C, Ctrl+S
+            const forbiddenKeys = [
+                123, // F12
+                (e.ctrlKey || e.metaKey) && 85, // Ctrl+U
+                (e.ctrlKey || e.metaKey) && e.shiftKey && 73, // Ctrl+Shift+I
+                (e.ctrlKey || e.metaKey) && e.shiftKey && 67, // Ctrl+Shift+C
+                (e.ctrlKey || e.metaKey) && 83 // Ctrl+S
+            ];
+            
+            if (forbiddenKeys.includes(e.keyCode) || 
+                forbiddenKeys.some(condition => typeof condition === 'function' && condition(e))) {
+                e.preventDefault();
+                return false;
+            }
+        });
+        
+        // 5. Detección de herramientas de desarrollador
+        const devtools = {
+            open: false,
+            orientation: null
+        };
+        
+        const threshold = 160;
+        
+        setInterval(function() {
+            if (window.outerHeight - window.innerHeight > threshold || 
+                window.outerWidth - window.innerWidth > threshold) {
+                if (!devtools.open) {
+                    // Las herramientas de desarrollador están abiertas
+                    document.body.innerHTML = '<div style="text-align:center;padding:50px;"><h1>Acceso Denegado</h1><p>Las herramientas de desarrollador están deshabilitadas en esta página.</p></div>';
+                }
+                devtools.open = true;
+            } else {
+                devtools.open = false;
+            }
+        }, 500);
+        
+        // 6. Protección contra impresión
+        window.addEventListener('beforeprint', function(e) {
+            e.preventDefault();
+            alert('La impresión está deshabilitada en esta página.');
+        });
+        
+        // 7. Evitar iframe
+        if (window.top !== window.self) {
+            window.top.location = window.self.location;
+        }
+        
+        // 8. Añadir marcado de agua
+        function addWatermark() {
+            const watermark = document.createElement('div');
+            watermark.style.position = 'fixed';
+            watermark.style.bottom = '10px';
+            watermark.style.right = '10px';
+            watermark.style.fontSize = '8px';
+            watermark.style.color = 'rgba(255,255,255,0.01)';
+            watermark.style.zIndex = '9999';
+            watermark.style.pointerEvents = 'none';
+            watermark.textContent = '© ' + new Date().getFullYear() + ' - Alejandro Plaza - alejandroepg@gmail.com';
+            document.body.appendChild(watermark);
+        }
+        
+        addWatermark();
+        
+        // 9. Deshabilitar consola
+        const console = {
+            log: function() {},
+            warn: function() {},
+            error: function() {},
+            info: function() {},
+            debug: function() {},
+            table: function() {},
+            trace: function() {},
+            dir: function() {},
+            dirxml: function() {},
+            count: function() {},
+            markTimeline: function() {},
+            profile: function() {},
+            profileEnd: function() {},
+            time: function() {},
+            timeEnd: function() {},
+            timeStamp: function() {},
+            clear: function() {},
+            assert: function() {},
+            group: function() {},
+            groupCollapsed: function() {},
+            groupEnd: function() {},
+            memory: function() {}
+        };
+        
+        // Mensaje de advertencia
+        console.log('%c¡Alto ahí!', 'color: red; font-size: 30px; font-weight: bold;');
+        console.log('%cEsta página está protegida contra copia.', 'color: blue; font-size: 20px;');
+        console.log('%cSi eres el propietario, por favor contacta al administrador.', 'color: green; font-size: 16px;');
+    })();
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const readAloudButton = document.getElementById('btn-read-aloud');
+    const chapterContent = document.getElementById('chapter-content');
+    let isReading = false;
+    let utterance = null;
+    let synth = window.speechSynthesis;
+
+    // Función para detener la lectura actual
+    function stopReading() {
+        if (utterance) {
+            synth.cancel();
+            isReading = false;
+            readAloudButton.innerHTML = '<i class="fas fa-volume-up"></i> Leer en voz alta';
+        }
+    }
+
+    // Función para iniciar la lectura
+    function startReading() {
+        if (synth.speaking) {
+            stopReading();
+            return;
+        }
+
+        if (chapterContent.textContent.trim() === '') {
+            alert('No hay contenido para leer.');
+            return;
+        }
+
+        utterance = new SpeechSynthesisUtterance(chapterContent.textContent);
+
+        // Obtener voces disponibles
+        let voices = synth.getVoices();
+
+        // Filtrar por idioma y preferencia (ej. voz femenina en español)
+        let selectedVoice = voices.find(voice => 
+            voice.lang.includes('es') && voice.name.includes('Helena') // Windows
+        ) || voices.find(voice => 
+            voice.lang.includes('es')
+        ) || voices.find(voice => 
+            voice.lang.includes('en') && voice.name.includes('Samantha') // Mac
+        ) || voices.find(voice => 
+            voice.lang.includes('en')
+        );
+
+        if (selectedVoice) {
+            utterance.voice = selectedVoice;
+        }
+
+        // Configurar idioma si no se encontró voz específica
+        const activeLangButton = document.querySelector('.language-selector button.active');
+        if (activeLangButton.id === 'btn-es') {
+            utterance.lang = 'es-ES';
+        } else {
+            utterance.lang = 'en-US';
+        }
+
+        utterance.rate = 1;
+        utterance.pitch = 1;
+        utterance.volume = 1;
+
+        utterance.onend = function() {
+            isReading = false;
+            readAloudButton.innerHTML = '<i class="fas fa-volume-up"></i> Leer en voz alta';
+        };
+
+        synth.speak(utterance);
+        isReading = true;
+        readAloudButton.innerHTML = '<i class="fas fa-stop"></i> Detener lectura';
+    }
+
+    readAloudButton.addEventListener('click', function() {
+        if (isReading) {
+            stopReading();
+        } else {
+            startReading();
+        }
     });
 
-}
+    // Detener la lectura si el usuario navega a otro capítulo
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('#chapter-list a')) {
+            stopReading();
+        }
+    });
+});
+
