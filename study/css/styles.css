@@ -131,32 +131,76 @@ body {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
+
+/* Estilos para el selector de idioma con banderas */
 .language-selector {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: white;
+    padding: 5px;
+    border-radius: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     display: flex;
-    justify-content: flex-end;
-    margin-bottom: 20px;
+    gap: 5px;
 }
 
 .language-selector button {
-    padding: 8px 16px;
-    margin-left: 10px;
-    border: none;
-    border-radius: 4px;
-    background-color: #ecf0f1;
-    color: #2c3e50;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid transparent;
     cursor: pointer;
+    overflow: hidden;
+    padding: 0;
+    background-color: transparent;
     transition: all 0.3s ease;
-    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.language-selector button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .language-selector button.active {
-    background-color: #3498db;
-    color: white;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.3);
 }
 
 .language-selector button:hover {
-    background-color: #3498db;
-    color: white;
+    transform: scale(1.1);
+    border-color: #3498db;
+}
+
+/* Responsive para el selector de idioma con banderas */
+@media (max-width: 768px) {
+    .language-selector {
+        top: 15px;
+        right: 15px;
+    }
+    
+    .language-selector button {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .language-selector {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .language-selector button {
+        width: 35px;
+        height: 30px;
+    }
 }
 
 #chapter-content {
@@ -337,7 +381,7 @@ body {
     }
     
     .language-selector button {
-        padding: 6px 12px;
+       
         margin-left: 8px;
         font-size: 14px;
     }
@@ -427,7 +471,7 @@ body {
     }
     
     .language-selector button {
-        padding: 5px 10px;
+       
         margin-left: 6px;
         font-size: 13px;
     }
@@ -1319,3 +1363,99 @@ hr {
         margin-bottom: 10px;
     }
 }
+
+/* Estilos para el botón de leer en voz alta */
+.read-aloud-btn {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    margin: 15px auto;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.read-aloud-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.read-aloud-btn i {
+    margin-right: 8px;
+}
+
+/* Responsive para el botón de lectura */
+@media (max-width: 768px) {
+    .read-aloud-btn {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    
+    .read-aloud-btn i {
+        margin-right: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .read-aloud-btn {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}
+
+/* Botón para volver al principio de la página */
+#scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none; /* Inicialmente oculto */
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+#scroll-to-top:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Responsive para el botón de scroll */
+@media (max-width: 768px) {
+    #scroll-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    #scroll-to-top {
+        bottom: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+}
+
