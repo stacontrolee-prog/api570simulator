@@ -404,7 +404,7 @@ async function openExam(codeName, chapterId) {
             case "3.37": examType = 'api571_cap3-37'; break;
             case "3.43": examType = 'api571_cap3-43'; break;
             case "3.45": examType = 'api571_cap3-45'; break;
-            case "3 57": examType = 'api571_cap3-57'; break;
+            case "3.57": examType = 'api571_cap3-57'; break;
             case "3.58": examType = 'api571_cap3-58'; break;
             case "3.61": examType = 'api571_cap3-61'; break;
             case "A": examType = 'api571_annexA'; break;
@@ -1443,3 +1443,4 @@ document.addEventListener("keydown", function(event) {
   }
 
 });
+
