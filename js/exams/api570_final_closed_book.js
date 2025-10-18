@@ -29,12 +29,12 @@ export default {
             id: 53,
             text: "RBI utilizes two assessments of failures. These are:",
             options: [
-                "Truth or consequences",
                 "Consequence and probability",
                 "Likelihood and outcome",
-                "Consequence and likelihood"
+                "Consequence and likelihood",
+                "Truth or consequences"
             ],
-            correct: 3,
+            correct: 2,
             reference: "API 570, 5.1"
         },
         {
@@ -46,7 +46,7 @@ export default {
                 "10",
                 "2.8"
             ],
-            correct: 1,
+            correct: 3,
             reference: "API 570, 7.1.1"
         },
         {
@@ -54,11 +54,11 @@ export default {
             text: "Mill Test Reports & X-Rays are ______ considered a substitute for PMI Testing.",
             options: [
                 "can be",
+                "X-Rays are",
                 "should not be",
-                "are",
-                "shall be"
+                "are"
             ],
-            correct: 1,
+            correct: 2,
             reference: "RP 578, 7.2"
         },
         {
@@ -130,7 +130,7 @@ export default {
                 "Bulk transfer lines at a dock",
                 "Both A & C above"
             ],
-            correct: 3,
+            correct: 0,
             reference: "API 570, 1.2.2"
         },
         {
@@ -334,7 +334,7 @@ export default {
                 "Both A & B above",
                 "None of the above"
             ],
-            correct: 2,
+            correct: 3,
             reference: "API 570, 9.1.5"
         },
         {
@@ -428,9 +428,9 @@ export default {
                 "12.5%",
                 "+16\". -0\"",
                 "-.01\"",
-                "+ 9%"
+                "+o- 9%"
             ],
-            correct: 0,
+            correct: 2,
             reference: "API 574, 4.1.1"
         },
         {
@@ -461,8 +461,8 @@ export default {
             id: 89,
             text: "Which of the following is not a tool for measuring corrosion of piping:",
             options: [
-                "Ultrasonic instruments",
                 "Acoustic emission transducers",
+                "Ultrasonic instruments",
                 "Radiography profile",
                 "Corrosion coupons"
             ],
@@ -502,7 +502,7 @@ export default {
                 "150°F",
                 "50°F"
             ],
-            correct: 2,
+            correct: 3,
             reference: "B31.3, T330.1"
         },
         {
@@ -610,7 +610,7 @@ export default {
                 "1270 psi",
                 "792 psi"
             ],
-            correct: 1,
+            correct: 2,
             reference: "B31.3, 345.4.2"
         },
         {
@@ -658,7 +658,7 @@ export default {
                 "The base and filler metals are of different bending compositions",
                 "The weld is a fillet weld"
             ],
-            correct: 1,
+            correct: 2,
             reference: "ASME IX,QW-161.5"
         },
         {
@@ -706,7 +706,7 @@ export default {
                 "The wire used",
                 "The power source used"
             ],
-            correct: 1,
+            correct: 2,
             reference: "ASME IX, QW 492"
         },
         {
@@ -714,8 +714,8 @@ export default {
             text: "A leak test of a buried piping system should be maintained for a minimum of ______ hours. After ______ hours the system pressure should be noted, and the system should be re-pressurized if required.",
             options: [
                 "4, 4",
-                "8,8",
-                "8,4",
+                "8, 8",
+                "8, 4",
                 "4, 8"
             ],
             correct: 2,
@@ -754,7 +754,7 @@ export default {
                 "Low in sulphur",
                 "None of the above"
             ],
-            correct: 0,
+            correct: 3,
             reference: "API 570, 5.7"
         },
         {
@@ -773,12 +773,12 @@ export default {
             id: 115,
             text: "An ASME magnetic particle field indicator is made up of how many \"PIE\" sections furnace brazed together?",
             options: [
-                "8",
                 "2",
+                "8",
                 "6",
                 "4"
             ],
-            correct: 0,
+            correct: 1,
             reference: "ASME V,T-753.1.2"
         },
         {
@@ -918,11 +918,11 @@ export default {
             text: "The difference between a concentric and eccentric reducer is:",
             options: [
                 "Size",
-                "The geometry of the reduction",
                 "Diameter at the reduced end",
-                "Diameter at the large end"
+                "Diameter at the large end",
+                "The geometry of the reduction"
             ],
-            correct: 1,
+            correct: 3,
             reference: "API 574, fig 10"
         },
         {
@@ -958,12 +958,12 @@ export default {
                 "25%",
                 "100%"
             ],
-            correct: 2,
+            correct: 3,
             reference: "B31.3, 331.1.7"
         },
         {
             id: 131,
-            text: "______ may be used with UT instruments when checking pipe with operating temperatures above 200°F.",
+            text: "______ or ______ may be used with UT instruments when checking pipe with operating temperatures above 200°F.",
             options: [
                 "Delay line transducers, pulse echo equipment",
                 "Water cooled transducers, delay line transducers",
@@ -1090,7 +1090,7 @@ export default {
                 "RT'd",
                 "PT'd"
             ],
-            correct: 1,
+            correct: 2,
             reference: "API 570, 6.6.3"
         },
         {
@@ -1198,7 +1198,7 @@ export default {
                 "6",
                 "4"
             ],
-            correct: 0,
+            correct: 3,
             reference: "B16.5, 6.5"
         }
     ]
